@@ -1,0 +1,57 @@
+.ft__login__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 40, 83, 1), rgba(4, 12, 24, 1)); /* Replace with your gradient */
+}
+
+
+.ft__login__input {
+    position: relative;
+}
+
+.ft__login__input input {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #fff; /* Set the color of the underline */
+    background: transparent;
+    color: #fff;
+    outline: none;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #474e61;
+}
+
+.ft__login__wrapper button {
+    flex: 0.6;
+    width: 50%;
+    min-height: 50px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    background: #ff7700;
+    border: 2px solid #ff7700;
+    padding: 0 1rem;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+
+
+    border-radius: 5px;
+}
+
+

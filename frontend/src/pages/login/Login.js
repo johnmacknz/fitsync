@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './login.css';
-import '../../App.css';
+import {LoginNavbar} from "../../components";
+import {LoginInput} from "../../containers";
 
 
 const Login = () => {
@@ -16,32 +17,9 @@ const Login = () => {
     };
 
     return (
-        <div className="ft__login__wrapper">
-                <form>
-                    <div className="ft__login__input">
-                        <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Email"
-                        />
-                        <div className="underline"></div>
-                    </div>
-                    <br />
-                    <div className="ft__login__input">
-                        <input
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Password"
-                        />
-                        <div className="underline"></div>
-                    </div>
-                    <br />
-                    <button type="button" onClick={handleLogin}>
-                        Login
-                    </button>
-                </form>
+        <div className="ft__login__container">
+            <LoginNavbar />
+            <LoginInput />
         </div>
     );
 };

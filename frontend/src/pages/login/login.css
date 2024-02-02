@@ -1,9 +1,6 @@
-.ft__login__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.ft__login__container {
     min-height: 100vh;
-    background: linear-gradient(to bottom, rgba(0, 40, 83, 1), rgba(4, 12, 24, 1)); /* Replace with your gradient */
+    background: linear-gradient(to bottom, rgba(0, 40, 83, 1), rgba(4, 12, 24, 1));
 }
 
 
@@ -20,9 +17,9 @@
     color: #fff;
     outline: none;
     font-family: var(--font-family);
-    font-weight: 500;
+    font-weight: 200;
     font-size: 30px;
-    line-height: 40px;
+    line-height: 30px;
 
 }
 
@@ -37,14 +34,13 @@
 
 .ft__login__wrapper button {
     flex: 0.6;
-    width: 50%;
     min-height: 50px;
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
-    background: #ff7700;
-    border: 2px solid #ff7700;
+    background: #fd7600;
+    border: 2px solid #fd7600;
     padding: 0 1rem;
     color: #fff;
     cursor: pointer;
@@ -54,4 +50,58 @@
     border-radius: 5px;
 }
 
+.logo {
+    max-width: 200px;  /* Set the maximum width of the logo */
+    max-height: 100px; /* Set the maximum height of the logo */
+    width: auto;
+    height: auto;
+}
 
+.ft__login__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 180px;
+    margin-right: 180px;
+}
+
+.ft__login__options {
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ft__login__remember {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ft__login__remember input {
+    margin-right: 800px; /* Adjust this value for spacing between the checkbox and label */
+}
+
+.ft__login__remember input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4f6774;
+    border-radius: 4px;
+    outline: none;
+    margin: 0;
+    cursor: pointer;
+}
+
+.ft__login__remember input[type="checkbox"]:checked {
+    background-color: #4f6774; /* Adjust this color for the checked state */
+    border-color: #4f6774;
+}
+
+.ft__login__remember label {
+    color: #4f6774;
+    font-family: var(--font-family);
+    margin-left: 10px;
+}

@@ -1,0 +1,63 @@
+.ft__loginnavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6rem;
+}
+
+
+.ft__loginnavbar-links_logo {
+    margin-right: 2rem;
+}
+
+.ft__loginnavbar-links_logo img {
+    width: 200px;
+    height: 120px;
+}
+
+.ft__loginnavbar-sign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.ft__loginnavbar-sign button {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background: #fd7600;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.ft__loginnavbar-back {
+    display: flex;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    background-color: transparent;
+}
+
+.back-button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    color: #4f6774;
+    font-family: var(--font-family);
+}
+
+.back-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+
+
+

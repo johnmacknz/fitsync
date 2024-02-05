@@ -29,7 +29,7 @@ class WeightLiftingExerciseTest {
      *
      * <ul>
      *   <li>
-     * {@link WeightLiftingExercise#WeightLiftingExercise(Long, String, LocalDateTime, LocalDateTime, Integer, int, int, double)}
+     * {@link WeightLiftingExercise#WeightLiftingExercise(Long, String, LocalDateTime, LocalDateTime, Integer, int, int, double, String)}
      *   <li>{@link WeightLiftingExercise#setWeightInKg(double)}
      *   <li>{@link WeightLiftingExercise#getWeightInKg()}
      * </ul>
@@ -38,7 +38,7 @@ class WeightLiftingExerciseTest {
     void testConstructor2() {
         LocalDateTime startTime = LocalDate.of(1970, 1, 1).atStartOfDay();
         WeightLiftingExercise actualWeightLiftingExercise = new WeightLiftingExercise(1L, "Exercise Name", startTime,
-                LocalDate.of(1970, 1, 1).atStartOfDay(), 1, 1, 1, 10.0d);
+                LocalDate.of(1970, 1, 1).atStartOfDay(), 1, 1, 1, 10.0d, "TargetMuscle");
         actualWeightLiftingExercise.setWeightInKg(10.0d);
         assertEquals(10.0d, actualWeightLiftingExercise.getWeightInKg());
     }

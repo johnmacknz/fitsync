@@ -1,5 +1,6 @@
 package fitnesstracker.controllers;
 
+import fitnesstracker.data.ExerciseUtils;
 import fitnesstracker.entities.exercise.Exercise;
 import fitnesstracker.services.ExerciseHistoryService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -82,7 +83,10 @@ public class ExerciseHistoryController {
     public Exercise addNewExercise(@RequestBody(required = false) @Valid Exercise exercise) {
         Exercise newExercise;
         try {
-                newExercise = exerciseHistoryService.addExercise(exercise);
+            newExercise = ExerciseUtils.convertExercise(exercise);
+            newExercise.setDescription(exercise.getDescription());
+            newExercise.setEquipmentRequired(exercise.getEquipmentRequired());
+            newExercise = exerciseHistoryService.addExercise(newExercise);
         } catch (IllegalArgumentException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }

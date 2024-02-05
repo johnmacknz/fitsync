@@ -81,17 +81,17 @@ public class DataPopulate {
         //*******************************************************************************
 
         //*******************************************************************************
-        Exercise exercise1 = new WeightLiftingExercise(person1.getId(), "Barbell rows", LocalDateTime.of(2023, 11, 30, 10, 0), LocalDateTime.of(2023, 11, 30, 11, 0), 250, 5, 5,12);
+        Exercise exercise1 = new WeightLiftingExercise(person1.getId(), "Barbell rows", LocalDateTime.of(2023, 11, 30, 10, 0), LocalDateTime.of(2023, 11, 30, 11, 0), 250, 5, 5,12, "Back");
         exercise1.setEquipmentRequired("Barbell and free weights");
         exercise1.setDescription("Just do whatever man");
         exerciseHistoryService.addExercise(exercise1);
 
-        Exercise exercise2 = new WeightLiftingExercise(person1.getId(), "Deadlifts", LocalDateTime.of(2023, 11, 30, 10, 0), LocalDateTime.of(2023, 11, 30, 11, 0), 250, 5, 5,50);
+        Exercise exercise2 = new WeightLiftingExercise(person1.getId(), "Deadlifts", LocalDateTime.of(2023, 11, 30, 10, 0), LocalDateTime.of(2023, 11, 30, 11, 0), 250, 5, 5,50, "Legs");
         exercise2.setEquipmentRequired("Barbell and free weights");
         exercise2.setDescription("Just don't pop your shoulder");
         exerciseHistoryService.addExercise(exercise2);
 
-        Exercise exercise3 = new WeightLiftingExercise(person1.getId(), "Deadlifts", LocalDateTime.of(2023, 11, 30, 12, 0), LocalDateTime.of(2023, 11, 30, 14, 0), 200, 3, 12, 100);
+        Exercise exercise3 = new WeightLiftingExercise(person1.getId(), "Deadlifts", LocalDateTime.of(2023, 11, 30, 12, 0), LocalDateTime.of(2023, 11, 30, 14, 0), 200, 3, 12, 100, "Legs");
         exerciseHistoryService.addExercise(exercise3);
 
         Exercise exercise4 = new DistanceCardioExercise(person1.getId(), "Running", LocalDateTime.of(2023, 12, 1, 8, 0), LocalDateTime.of(2023, 12, 1, 9, 0), 300, 10.5);
@@ -103,13 +103,12 @@ public class DataPopulate {
         exercise5.setDescription("Hold a plank position for 5 minutes");
         exerciseHistoryService.addExercise(exercise5);
 
-        // Weight Lifting Exercises
-        Exercise exercise6 = new WeightLiftingExercise(person1.getId(), "Bench Press", LocalDateTime.of(2023, 12, 5, 12, 0), LocalDateTime.of(2023, 12, 5, 13, 0), 180, 4, 8, 150);
+        Exercise exercise6 = new WeightLiftingExercise(person1.getId(), "Bench Press", LocalDateTime.of(2023, 12, 5, 12, 0), LocalDateTime.of(2023, 12, 5, 13, 0), 180, 4, 8, 150, "Chest");
         exercise6.setEquipmentRequired("Barbell and bench");
         exercise6.setDescription("Focus on proper form and controlled movements");
         exerciseHistoryService.addExercise(exercise6);
 
-        Exercise exercise7 = new WeightLiftingExercise(person2.getId(), "Dumbbell Lunges", LocalDateTime.of(2023, 12, 8, 9, 0), LocalDateTime.of(2023, 12, 8, 10, 0), 120, 3, 12, 40);
+        Exercise exercise7 = new WeightLiftingExercise(person2.getId(), "Dumbbell Lunges", LocalDateTime.of(2023, 12, 8, 9, 0), LocalDateTime.of(2023, 12, 8, 10, 0), 120, 3, 12, 40, "Legs");
         exercise7.setEquipmentRequired("Dumbbells");
         exercise7.setDescription("Strengthen your legs and improve balance");
         exerciseHistoryService.addExercise(exercise7);

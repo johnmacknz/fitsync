@@ -7,12 +7,9 @@ import java.time.LocalDateTime;
 public class NoDistanceCardioExercise extends CardioExercise {
     public NoDistanceCardioExercise(Long personId, String exerciseName, LocalDateTime startTime, LocalDateTime endTime, Integer caloriesBurned) {
         super(personId, exerciseName, startTime, endTime, caloriesBurned);
+        this.exerciseType = "No Distance Cardio Exercise";
     }
 
     public NoDistanceCardioExercise() {}
 
-    @Override
-    public String getExerciseType(){
-        return "No Distance Cardio Exercise";
-    }
 }

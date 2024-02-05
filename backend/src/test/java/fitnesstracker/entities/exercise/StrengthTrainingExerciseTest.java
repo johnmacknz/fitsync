@@ -39,7 +39,7 @@ class StrengthTrainingExerciseTest {
      *
      * <ul>
      *   <li>
-     * {@link StrengthTrainingExercise#StrengthTrainingExercise(Long, String, LocalDateTime, LocalDateTime, Integer, int, int)}
+     * {@link StrengthTrainingExercise#StrengthTrainingExercise(Long, String, LocalDateTime, LocalDateTime, Integer, int, int, String)}
      *   <li>{@link StrengthTrainingExercise#setReps(int)}
      *   <li>{@link StrengthTrainingExercise#setSets(int)}
      *   <li>{@link StrengthTrainingExercise#setTargetMuscle(String)}
@@ -48,11 +48,13 @@ class StrengthTrainingExerciseTest {
      *   <li>{@link StrengthTrainingExercise#getTargetMuscle()}
      * </ul>
      */
+
+    //TODO: Fix this test with new constructor
     @Test
     void testConstructor2() {
         LocalDateTime startTime = LocalDate.of(1970, 1, 1).atStartOfDay();
         StrengthTrainingExercise actualStrengthTrainingExercise = new StrengthTrainingExercise(1L, "Exercise Name",
-                startTime, LocalDate.of(1970, 1, 1).atStartOfDay(), 1, 1, 1);
+                startTime, LocalDate.of(1970, 1, 1).atStartOfDay(), 1, 1, 1, "Target Muscle");
         actualStrengthTrainingExercise.setReps(1);
         actualStrengthTrainingExercise.setSets(1);
         actualStrengthTrainingExercise.setTargetMuscle("Target Muscle");

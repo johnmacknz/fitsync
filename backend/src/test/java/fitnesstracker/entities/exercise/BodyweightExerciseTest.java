@@ -30,17 +30,19 @@ class BodyweightExerciseTest {
         assertEquals(0L, actualBodyweightExercise.getDuration().toNanos());
     }
 
-    /**
-     * Method under test:
-     * {@link BodyweightExercise#BodyweightExercise(Long, String, LocalDateTime, LocalDateTime, Integer, int, int)}
-     */
+//    /**
+//     * Method under test:
+//     * {@link BodyweightExercise#BodyweightExercise(Long, String, LocalDateTime, LocalDateTime, Integer, Integer, Integer, String)}
+//     */
+
+    //TODO: Fix test with new constructor
     @Test
     void testConstructor2() {
         LocalDate ofResult = LocalDate.of(1970, 1, 1);
         LocalDateTime startTime = ofResult.atStartOfDay();
         LocalDate ofResult2 = LocalDate.of(1970, 1, 1);
         BodyweightExercise actualBodyweightExercise = new BodyweightExercise(1L, "Exercise Name", startTime,
-                ofResult2.atStartOfDay(), 1, 1, 1);
+                ofResult2.atStartOfDay(), 1, 1, 1, "Target Muscle");
 
         LocalDateTime endTime = actualBodyweightExercise.getEndTime();
         assertEquals("00:00", endTime.toLocalTime().toString());

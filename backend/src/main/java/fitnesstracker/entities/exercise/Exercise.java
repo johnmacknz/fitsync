@@ -19,9 +19,15 @@ public class Exercise {
     private LocalDateTime startInclusive;
 
     private LocalDateTime endExclusive;
+    protected String exerciseType;
+    protected String targetMuscle;
+    protected int sets;
+    protected int reps;
+    protected double distanceInKm;
+    protected double weightInKg;
 
     public String getExerciseType(){
-        return "Exercise";
+        return exerciseType;
     }
 
     @Schema(description = "Name of exercise.", example = "bench press")
@@ -35,6 +41,26 @@ public class Exercise {
 
     @Schema(description = "Exercise end time.", example = "2023-12-01 12:00:00")
     protected LocalDateTime endTime;
+
+    public String getTargetMuscle() {
+        return targetMuscle;
+    }
+
+    public int getSets() {
+        return sets;
+    }
+
+    public int getReps() {
+        return reps;
+    }
+
+    public double getDistanceInKm() {
+        return distanceInKm;
+    }
+
+    public double getWeightInKg() {
+        return weightInKg;
+    }
 
     @Schema(description = "Calories burned during exercise.", example = "200")
     protected Integer caloriesBurned;

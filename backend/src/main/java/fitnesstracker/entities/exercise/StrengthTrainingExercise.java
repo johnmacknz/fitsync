@@ -7,15 +7,6 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public class StrengthTrainingExercise extends Exercise {
 
-    @Schema(description = "Number of sets completed of exercise.", example = "3")
-    protected int sets;
-
-    @Schema(description = "Number of reps completed of exercise.", example = "10")
-    protected int reps;
-
-    @Schema(description = "Short description of target muscle(s) of exercise.", example = "Chest, shoulders, and triceps.")
-    protected String targetMuscle;
-
     public int getSets() {
         return sets;
     }
@@ -40,10 +31,11 @@ public class StrengthTrainingExercise extends Exercise {
         this.targetMuscle = targetMuscle;
     }
 
-    public StrengthTrainingExercise(Long personId, String exerciseName, LocalDateTime startTime, LocalDateTime endTime, Integer caloriesBurned, int sets, int reps) {
+    public StrengthTrainingExercise(Long personId, String exerciseName, LocalDateTime startTime, LocalDateTime endTime, Integer caloriesBurned, int sets, int reps, String targetMuscle) {
         super(personId, exerciseName, startTime, endTime, caloriesBurned);
         this.sets = sets;
         this.reps = reps;
+        this.targetMuscle = targetMuscle;
     }
 
     public StrengthTrainingExercise() {}

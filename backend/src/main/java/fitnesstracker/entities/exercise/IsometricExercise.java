@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 public class IsometricExercise extends Exercise {
 
     @Schema(description = "Short description of target muscle(s) of exercise.", example = "Chest, shoulders, and triceps.")
-    String targetMuscle;
     public String getTargetMuscle() {
         return targetMuscle;
     }
@@ -20,13 +19,10 @@ public class IsometricExercise extends Exercise {
     public IsometricExercise(Long personId, String exerciseName, LocalDateTime startTime, LocalDateTime endTime, Integer caloriesBurned, String targetMuscle) {
         super(personId, exerciseName, startTime, endTime, caloriesBurned);
         this.targetMuscle = targetMuscle;
+        this.exerciseType = "Isometric Exercise";
     }
 
     public IsometricExercise() {}
 
-    @Override
-    public String getExerciseType(){
-        return "Isometric Exercise";
-    }
 
 }

@@ -1,6 +1,6 @@
 package fitnesstracker.services;
 
-import fitnesstracker.entities.Person;
+import fitnesstracker.entities.person.Person;
 import fitnesstracker.entities.meal.Meal;
 import fitnesstracker.exceptions.MealServiceException;
 import fitnesstracker.repositories.MealRepository;
@@ -71,7 +71,7 @@ class MealServiceTest {
 
     @Test
     void testGetMealById() {
-        Person person1 = new Person(1L, "Bob", "bob123", "password1");
+        Person person1 = new Person("Bobby", "Tables", "bob123", "password1");
         MealRepository mockMealRepo = mock(MealRepository.class);
         mealService = new MealService(mockMealRepo);
 

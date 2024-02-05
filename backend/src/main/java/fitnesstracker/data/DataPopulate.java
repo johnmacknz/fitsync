@@ -1,6 +1,6 @@
 package fitnesstracker.data;
 
-import fitnesstracker.entities.Person;
+import fitnesstracker.entities.person.Person;
 import fitnesstracker.entities.exercise.DistanceCardioExercise;
 import fitnesstracker.entities.exercise.Exercise;
 import fitnesstracker.entities.exercise.IsometricExercise;
@@ -35,9 +35,9 @@ public class DataPopulate {
 
     public void populateData() {
         //*******************************************************************************
-        Person person1 = new Person(1L, "Bob", "bob123", "password1");
+        Person person1 = new Person("Bobby", "Tables", "bob123", "password1");
         personService.savePerson(person1);
-        Person person2 = new Person(2L, "Tom", "tom123", "password2");
+        Person person2 = new Person("Billy", "Tables", "bill123", "password2");
         personService.savePerson(person2);
         //*******************************************************************************
 

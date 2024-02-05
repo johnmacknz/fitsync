@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Set;
 
-import fitnesstracker.entities.Person;
+import fitnesstracker.entities.person.Person;
 import org.junit.jupiter.api.Test;
 
 class MealTest {
@@ -34,7 +34,7 @@ class MealTest {
     @Test
     void testConstructor2() {
         LocalDate date = null;
-        Person person1 = new Person(1L, "Bob", "bob123", "password1");
+        Person person1 = new Person("Bobby", "Tables", "bob123", "password1");
         ArrayList<Ingredient> ingredientList = new ArrayList<>();
 
 //        Meal actualMeal = new Meal(date,"Meal Name", "Meal Type", 1, "Cooking Instructions", ingredientList, person1.getId());

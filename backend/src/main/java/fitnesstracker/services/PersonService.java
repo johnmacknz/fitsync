@@ -1,6 +1,6 @@
 package fitnesstracker.services;
 
-import fitnesstracker.entities.Person;
+import fitnesstracker.entities.person.Person;
 import fitnesstracker.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,5 +21,13 @@ public class PersonService {
     public Person savePerson(Person person){
         return this.personRepository.save(person);
 
+    }
+
+    public boolean authenticateUser(String email, String password) {
+        return personRepository.existsByEmailAndPassword(email, password);
+    }
+
+    public boolean isEmailInUse(String email) {
+        return personRepository.existsByEmail(email);
     }
 }

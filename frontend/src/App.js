@@ -10,7 +10,7 @@ function App() {
             <Navbar />
             <Header />
         </div>
-        <ExerciseList/>
+        {/*<ExerciseList/>*/}
         <Brand />
         <Footer />
     </div>

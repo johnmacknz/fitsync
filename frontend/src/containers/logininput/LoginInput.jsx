@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
+import LoginButtonLogic from "./LoginButtonLogic";
 
 const LoginInput = () => {
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = () => {
-        console.log('Logging in with:', email, password);
-
-        setEmail('');
-        setPassword('');
-    };
-
     return (
-        <div >
+        <div>
             <div className="ft__login__wrapper">
                 <form>
                     <div className="ft__login__input">
@@ -38,15 +31,10 @@ const LoginInput = () => {
                     <br />
                     <div className="ft__login__options">
                         <div className="ft__login__remember">
-                            <input
-                                type="checkbox"
-                                name="lsRememberMe"
-                            />
+                            <input type="checkbox" name="lsRememberMe" />
                             <label>Remember me</label>
                         </div>
-                        <button type="button" onClick={handleLogin} >
-                            Login
-                        </button>
+                        <LoginButtonLogic email={email} password={password} />
                     </div>
                 </form>
             </div>

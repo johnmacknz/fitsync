@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import fitnesstracker.entities.Person;
+import fitnesstracker.entities.person.Person;
 import fitnesstracker.repositories.PersonRepository;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -45,11 +45,12 @@ class PersonServiceTest {
     @Test
     void testSavePerson() {
         Person mockPerson = new Person();
-        mockPerson.setName("John Doe");
+        mockPerson.setFirstName("John");
+        mockPerson.setLastName("Doe");
         when(personRepository.save(Mockito.any(Person.class))).thenAnswer(invocation -> {
             return invocation.<Person>getArgument(0);
         });
         Person savedPerson = personService.savePerson(mockPerson);
-        assertEquals("John Doe", savedPerson.getName());
+        assertEquals("John Doe", savedPerson.getFullName());
     }
 }

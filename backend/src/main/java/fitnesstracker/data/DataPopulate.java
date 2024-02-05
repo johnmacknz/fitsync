@@ -35,9 +35,9 @@ public class DataPopulate {
 
     public void populateData() {
         //*******************************************************************************
-        Person person1 = new Person(1L, "Bob", "Tables", "bob123", "password1");
+        Person person1 = new Person("Bobby", "Tables", "bob123", "password1");
         personService.savePerson(person1);
-        Person person2 = new Person(2L, "Tom", "Rands", "tom123", "password2");
+        Person person2 = new Person("Billy", "Tables", "bill123", "password2");
         personService.savePerson(person2);
         //*******************************************************************************
 

@@ -26,4 +26,8 @@ public class PersonService {
     public boolean authenticateUser(String email, String password) {
         return personRepository.existsByEmailAndPassword(email, password);
     }
+
+    public boolean isEmailInUse(String email) {
+        return personRepository.existsByEmail(email);
+    }
 }

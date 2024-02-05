@@ -62,8 +62,7 @@ public class Person {
     public Person() {
     }
 
-    public Person(Long id, String firstName, String lastName, String email, String password) {
-        this.id = id;
+    public Person(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

@@ -1,6 +1,6 @@
 package fitnesstracker.config;
 
-import fitnesstracker.entities.Person;
+import fitnesstracker.entities.person.Person;
 import fitnesstracker.entities.exercise.Exercise;
 import fitnesstracker.entities.health.HealthStatistic;
 import org.jetbrains.annotations.NotNull;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TestUtilities {
 
-    static Person person1 = new Person(1L, "Bob", "bob123", "password1");
+    static Person person1 = new Person(1L, "Bob", "Tables", "bob123", "password1");
 
 //    public static @NotNull ArrayList<Meal> getMealList() {
 //        ArrayList<Meal> meals = new ArrayList<>();
@@ -49,7 +49,7 @@ public class TestUtilities {
         return exercises;
     }
     public static @NotNull List<HealthStatistic> getStatsList() {
-        Person person2 = new Person(1L, "Tom", "tom123", "password1");
+        Person person2 = new Person(1L, "Tom", "Rands", "tom123", "password1");
         ArrayList<HealthStatistic> healthStatistics = new ArrayList<>();
         HealthStatistic healthStatistic1 = new HealthStatistic(null, 23.0, 60.0, 80.0, 90.0, 0, 0, 65.0, 10.0, person2.getId());
         HealthStatistic healthStatistic2 = new HealthStatistic(null, 24.0, 61.0, 81.0, 91.0, 0, 0, 66.0, 11.0, person2.getId());

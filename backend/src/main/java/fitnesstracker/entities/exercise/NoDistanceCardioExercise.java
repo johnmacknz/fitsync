@@ -10,4 +10,9 @@ public class NoDistanceCardioExercise extends CardioExercise {
     }
 
     public NoDistanceCardioExercise() {}
+
+    @Override
+    public String getExerciseType(){
+        return "No Distance Cardio Exercise";
+    }
 }

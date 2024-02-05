@@ -24,7 +24,7 @@ class IsometricExerciseTest {
         assertEquals("Target Muscle", actualIsometricExercise.getTargetMuscle());
     }
 
-    /**
+    /*
      * Methods under test:
      *
      * <ul>
@@ -38,7 +38,7 @@ class IsometricExerciseTest {
     void testConstructor2() {
         LocalDateTime startTime = LocalDate.of(1970, 1, 1).atStartOfDay();
         IsometricExercise actualIsometricExercise = new IsometricExercise(1L, "Exercise Name", startTime,
-                LocalDate.of(1970, 1, 1).atStartOfDay(), 1);
+                LocalDate.of(1970, 1, 1).atStartOfDay(), 1, "Chest");
         actualIsometricExercise.setTargetMuscle("Target Muscle");
         assertEquals("Target Muscle", actualIsometricExercise.getTargetMuscle());
     }

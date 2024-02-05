@@ -1,7 +1,9 @@
 package fitnesstracker.data;
 
 import fitnesstracker.entities.Person;
+import fitnesstracker.entities.exercise.DistanceCardioExercise;
 import fitnesstracker.entities.exercise.Exercise;
+import fitnesstracker.entities.exercise.IsometricExercise;
 import fitnesstracker.entities.exercise.WeightLiftingExercise;
 import fitnesstracker.entities.health.HealthStatistic;
 import fitnesstracker.entities.meal.Ingredient;
@@ -89,8 +91,44 @@ public class DataPopulate {
         exercise2.setDescription("Just don't pop your shoulder");
         exerciseHistoryService.addExercise(exercise2);
 
-        WeightLiftingExercise exercise3 = new WeightLiftingExercise(person1.getId(), "Deadlifts", LocalDateTime.now(), LocalDateTime.now(), 200, 3, 12, 100);
+        Exercise exercise3 = new WeightLiftingExercise(person1.getId(), "Deadlifts", LocalDateTime.of(2023, 11, 30, 12, 0), LocalDateTime.of(2023, 11, 30, 14, 0), 200, 3, 12, 100);
         exerciseHistoryService.addExercise(exercise3);
+
+        Exercise exercise4 = new DistanceCardioExercise(person1.getId(), "Running", LocalDateTime.of(2023, 12, 1, 8, 0), LocalDateTime.of(2023, 12, 1, 9, 0), 300, 10.5);
+        exercise4.setDescription("Morning run in the park");
+        exerciseHistoryService.addExercise(exercise4);
+
+
+        Exercise exercise5 = new IsometricExercise(person1.getId(), "Plank", LocalDateTime.of(2023, 12, 2, 15, 0), LocalDateTime.of(2023, 12, 2, 15, 5), 50,"Core");
+        exercise5.setDescription("Hold a plank position for 5 minutes");
+        exerciseHistoryService.addExercise(exercise5);
+
+        // Weight Lifting Exercises
+        Exercise exercise6 = new WeightLiftingExercise(person1.getId(), "Bench Press", LocalDateTime.of(2023, 12, 5, 12, 0), LocalDateTime.of(2023, 12, 5, 13, 0), 180, 4, 8, 150);
+        exercise6.setEquipmentRequired("Barbell and bench");
+        exercise6.setDescription("Focus on proper form and controlled movements");
+        exerciseHistoryService.addExercise(exercise6);
+
+        Exercise exercise7 = new WeightLiftingExercise(person2.getId(), "Dumbbell Lunges", LocalDateTime.of(2023, 12, 8, 9, 0), LocalDateTime.of(2023, 12, 8, 10, 0), 120, 3, 12, 40);
+        exercise7.setEquipmentRequired("Dumbbells");
+        exercise7.setDescription("Strengthen your legs and improve balance");
+        exerciseHistoryService.addExercise(exercise7);
+
+        Exercise exercise8 = new DistanceCardioExercise(person2.getId(), "Cycling", LocalDateTime.of(2023, 12, 10, 18, 0), LocalDateTime.of(2023, 12, 10, 19, 0), 400, 20.5);
+        exercise8.setDescription("Evening bike ride around the neighborhood");
+        exerciseHistoryService.addExercise(exercise8);
+
+        Exercise exercise9 = new DistanceCardioExercise(person2.getId(), "Swimming", LocalDateTime.of(2023, 12, 15, 7, 0), LocalDateTime.of(2023, 12, 15, 8, 0), 350, 1.5);
+        exercise9.setDescription("Lap swimming for cardiovascular fitness");
+        exerciseHistoryService.addExercise(exercise9);
+
+        Exercise exercise10 = new IsometricExercise(person2.getId(), "Wall Sit", LocalDateTime.of(2023, 12, 18, 14, 0), LocalDateTime.of(2023, 12, 18, 14, 5), 60, "Legs");
+        exercise10.setDescription("Hold a wall sit position for one minute");
+        exerciseHistoryService.addExercise(exercise10);
+
+        Exercise exercise11 = new IsometricExercise(person2.getId(), "Plank with Shoulder Taps", LocalDateTime.of(2023, 12, 20, 16, 0), LocalDateTime.of(2023, 12, 20, 16, 5), 70, "Core");
+        exercise11.setDescription("Plank with alternating shoulder taps for added challenge");
+        exerciseHistoryService.addExercise(exercise11);
 
         //*******************************************************************************
 

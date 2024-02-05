@@ -11,4 +11,10 @@ public class BodyweightExercise extends StrengthTrainingExercise {
     }
 
     public BodyweightExercise() {}
+
+    @Override
+    public String getExerciseType(){
+        return "Bodyweight Exercise";
+    }
 }
+

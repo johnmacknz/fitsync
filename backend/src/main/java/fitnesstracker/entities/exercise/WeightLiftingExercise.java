@@ -24,4 +24,8 @@ public class WeightLiftingExercise extends StrengthTrainingExercise {
     }
 
     public WeightLiftingExercise() {}
+    @Override
+    public String getExerciseType(){
+        return "WeightLifting Exercise";
+    }
 }

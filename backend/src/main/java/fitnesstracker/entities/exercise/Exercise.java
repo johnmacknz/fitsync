@@ -20,6 +20,10 @@ public class Exercise {
 
     private LocalDateTime endExclusive;
 
+    public String getExerciseType(){
+        return "Exercise";
+    }
+
     @Schema(description = "Name of exercise.", example = "bench press")
     protected String exerciseName;
 

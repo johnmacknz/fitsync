@@ -23,4 +23,9 @@ public class DistanceCardioExercise extends CardioExercise {
     }
 
     public DistanceCardioExercise() {}
+
+    @Override
+    public String getExerciseType(){
+        return "Distance Cardio Exercise";
+    }
 }

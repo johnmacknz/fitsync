@@ -17,9 +17,16 @@ public class IsometricExercise extends Exercise {
         this.targetMuscle = targetMuscle;
     }
 
-    public IsometricExercise(Long personId, String exerciseName, LocalDateTime startTime, LocalDateTime endTime, Integer caloriesBurned) {
+    public IsometricExercise(Long personId, String exerciseName, LocalDateTime startTime, LocalDateTime endTime, Integer caloriesBurned, String targetMuscle) {
         super(personId, exerciseName, startTime, endTime, caloriesBurned);
+        this.targetMuscle = targetMuscle;
     }
 
     public IsometricExercise() {}
+
+    @Override
+    public String getExerciseType(){
+        return "Isometric Exercise";
+    }
+
 }

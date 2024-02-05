@@ -1,6 +1,7 @@
 import './App.css';
 import {Brand, Navbar} from "./components";
 import {Footer, Header} from "./containers";
+import ExerciseList from "./pages/exerciselist/ExerciseList";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
             <Navbar />
             <Header />
         </div>
+        {/*<ExerciseList/>*/}
         <Brand />
         <Footer />
     </div>

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 import './MealList.css';
+import UserNavbar from "../../components/usernavbar/UserNavbar";
+import MealTab from "../../containers/mealTab/MealTab";
 
 const MealList = () => {
     const [meals, setMeals] = useState([]);
-    const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
         const fetchMeals = () => {
@@ -17,53 +18,15 @@ const MealList = () => {
         fetchMeals();
     }, []);
 
-    useEffect(() => {
-        const body = document.body;
-        body.classList.toggle('dark-mode', darkMode);
-    }, [darkMode]);
-
-    const toggleDarkMode = () => {
-        setDarkMode(prevMode => !prevMode);
-    };
-
     return (
-    <>
-                <div>
-                    <div className="mode-toggle">
-                        <input
-                            type="checkbox"
-                            id="darkModeToggle"
-                            checked={darkMode}
-                            onChange={toggleDarkMode}
-                        />
-                        <label htmlFor="darkModeToggle" className="slider"></label>
-                        <span className="mode-label">
-                    {darkMode ? 'Dark Mode' : 'Light Mode'}
-                </span>
-                    </div>
-                    <h2>All Meals</h2>
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Meal Name</th>
-                            <th>Calories</th>
-                            <th>Meal Type</th>
-                            <th>Cooking Instructions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                <div className="ft__login__container">
+                    <UserNavbar />
+                    <div className="tabs-container">
                         {meals.map((meal) => (
-                            <tr key={meal.id}>
-                                <td>{meal.mealName}</td>
-                                <td>{meal.calories}</td>
-                                <td>{meal.mealType}</td>
-                                <td>{meal.cookingInstructions}</td>
-                            </tr>
+                            <MealTab key={meal.id} meal={meal} />
                         ))}
-                        </tbody>
-                    </table>
+                    </div>
                 </div>
-    </>
     );
 };
 

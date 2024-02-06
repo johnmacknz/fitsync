@@ -11,6 +11,18 @@
     justify-content: flex-end;
 }
 
+.ft__mealtab_container img {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+}
+
+.ft__mealtab_image {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+}
+
 .ft__mealtab_text h2 {
     margin-bottom: 15px;
     color: #fd7600;

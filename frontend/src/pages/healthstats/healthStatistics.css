@@ -1,0 +1,40 @@
+/* healthStatistics.css */
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* This allows items to wrap onto the next line if needed */
+}
+
+.form-header {
+    margin-bottom: 10px; /* Adjust as needed */
+    margin-right: 20px; /* Adjust as needed */
+    color: #ff7700;
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px; /* Adjust as needed */
+    margin-right: 20px; /* Adjust as needed */
+    color: #ff7700;
+}
+
+.form-label input {
+    margin-top: 5px; /* Adjust as needed */
+    width: 150px; /* Adjust the width as needed */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}

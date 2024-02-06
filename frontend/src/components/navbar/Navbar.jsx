@@ -17,10 +17,10 @@ const Navbar = () => {
                     <img src={logo} alt="FitSync Logo" />
                 </div>
                 <div className="ft__navbar-links_container">
-                    <Link to="/about-us" onClick={closeMenu}>About Us</Link>
-                    <Link to="/features" onClick={closeMenu}>Features</Link>
-                    <Link to="/pricing" onClick={closeMenu}>Pricing</Link>
-                    <Link to="/store" onClick={closeMenu}>Store</Link>
+                    <Link to="/about-us" >About Us</Link>
+                    <Link to="/features" >Features</Link>
+                    <Link to="/pricing" >Pricing</Link>
+                    <Link to="/store" >Store</Link>
                 </div>
             </div>
             <div className="ft__navbar-sign">

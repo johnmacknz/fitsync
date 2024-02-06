@@ -1,0 +1,75 @@
+#exerciseListContainer h2 {
+    margin-bottom: 15px;
+    color: #fd7600;
+    font-family: var(--font-family);
+}
+
+#exerciseListContainer p {
+    margin-bottom: 5px;
+    color: #a9cafd;
+    font-family: var(--font-family);
+}
+
+#exerciseList {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#exerciseList th {
+    background-color: #fd7600;
+    color: #fff;
+}
+
+#findPersonalBestButton {
+    background-color: #fd7600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#findPersonalBestButton:hover {
+    background-color: #ff9333;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--color-footer);
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 80%;
+    color: #333;
+    border-radius: 10px;
+    font-family: var(--font-family)
+}
+
+.close {
+    color: #fd7600;
+    float: right;
+    position: relative;
+    top: -20px;
+    right: -5px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff9333;
+    text-decoration: none;
+    cursor: pointer;
+}

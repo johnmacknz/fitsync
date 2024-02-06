@@ -1,13 +1,9 @@
-import {Navbar} from "../../components";
-import {Footer} from "../../containers";
+import UserNavbar from "../../components/usernavbar/UserNavbar";
 
 function Dashboard() {
     return (
-        <div className="Dashboard">
-            <div className="gradient__bg">
-                <Navbar />
-            </div>
-            <Footer />
+        <div className="gradient__bg">
+            <UserNavbar />
         </div>
     );
 }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import LoginButtonLogic from "../logininput/LoginButtonLogic";
 import SignUpButtonLogic from "./SignUpButtonLogic";
 
 const SignUpInput = () => {

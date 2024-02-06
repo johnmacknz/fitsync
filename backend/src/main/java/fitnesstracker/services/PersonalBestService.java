@@ -117,7 +117,7 @@ public class PersonalBestService {
     public List<Exercise> getPersonalBestSetsByPersonId(Long personId) {
         List<Exercise> bestSetsExercises = new ArrayList<>();
         for (String exerciseName : getExerciseNames(personId)) {
-            bestSetsExercises.add(getPersonalBestRepsByPersonIdAndExerciseNameIgnoreCase(personId, exerciseName));
+            bestSetsExercises.add(getPersonalBestSetsByPersonIdAndExerciseNameIgnoreCase(personId, exerciseName));
         }
         Iterables.removeIf(bestSetsExercises, Objects::isNull);
         return bestSetsExercises;

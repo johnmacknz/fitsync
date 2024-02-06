@@ -5,7 +5,7 @@ const MealDetails = () => {
 
 
     return (
-        <div className="gradient__bg">
+        <div className="ft__login__container">
             <UserNavbar />
             <Logic />
         </div>

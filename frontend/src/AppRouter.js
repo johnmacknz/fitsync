@@ -7,7 +7,6 @@ import MealList from "./pages/meallist/MealList";
 import Dashboard from "./pages/dashboard/Dashboard"
 import MealDetails from "./pages/mealdetails/MealDetails";
 import HealthStatisticsList from "./pages/healthstats/HealthStatisticsList";
-import Dashboard from "./pages/dashboard/Dashboard";
 
 const AppRouter = () => (
     <Router>
@@ -19,7 +18,6 @@ const AppRouter = () => (
             <Route path="/dashboard" element={<Dashboard />} />
             <Route exact path="/meals/:mealId" element={<MealDetails />} />
             <Route path="/stats" element={<HealthStatisticsList />} />
-            <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
     </Router>
 );

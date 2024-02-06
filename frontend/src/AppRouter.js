@@ -4,6 +4,7 @@ import App from './App';
 import SignUp from './pages/signup/SignUp';
 import Login from './pages/login/Login';
 import MealList from "./pages/meallist/MealList";
+import ExerciseList from "./pages/exerciselist/ExerciseList";
 
 const AppRouter = () => (
     <Router>
@@ -12,6 +13,7 @@ const AppRouter = () => (
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
             <Route path="/meals" element={<MealList />} />
+            <Route path="/exercises" element={<ExerciseList/>} />
         </Routes>
     </Router>
 );

@@ -42,25 +42,6 @@ public class Exercise {
     @Schema(description = "Exercise end time.", example = "2023-12-01 12:00:00")
     protected LocalDateTime endTime;
 
-    public String getTargetMuscle() {
-        return targetMuscle;
-    }
-
-    public int getSets() {
-        return sets;
-    }
-
-    public int getReps() {
-        return reps;
-    }
-
-    public double getDistanceInKm() {
-        return distanceInKm;
-    }
-
-    public double getWeightInKg() {
-        return weightInKg;
-    }
 
     @Schema(description = "Calories burned during exercise.", example = "200")
     protected Integer caloriesBurned;
@@ -113,6 +94,25 @@ public class Exercise {
             return Duration.between(startInclusive, endExclusive);
         }
         return Duration.ZERO; // or handle the null case appropriately
+    }
+    public String getTargetMuscle() {
+        return targetMuscle;
+    }
+
+    public int getSets() {
+        return sets;
+    }
+
+    public int getReps() {
+        return reps;
+    }
+
+    public double getDistanceInKm() {
+        return distanceInKm;
+    }
+
+    public double getWeightInKg() {
+        return weightInKg;
     }
 
 

@@ -7,9 +7,6 @@ import java.time.LocalDateTime;
 @Entity
 public class DistanceCardioExercise extends CardioExercise {
 
-    @Schema(description = "Distance travelled during exercise in kilometres.", example = "5")
-    private double distanceInKm;
-
     public double getDistanceInKm() {
         return distanceInKm;
     }
@@ -20,12 +17,9 @@ public class DistanceCardioExercise extends CardioExercise {
     public DistanceCardioExercise(Long personId, String exerciseName, LocalDateTime startTime, LocalDateTime endTime, Integer caloriesBurned, double distanceInKm) {
         super(personId, exerciseName, startTime, endTime, caloriesBurned);
         this.distanceInKm = distanceInKm;
+        this.exerciseType = "Distance Cardio Exercise";
     }
 
     public DistanceCardioExercise() {}
 
-    @Override
-    public String getExerciseType(){
-        return "Distance Cardio Exercise";
-    }
 }

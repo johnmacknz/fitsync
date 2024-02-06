@@ -24,7 +24,7 @@ class PersonTest {
     }
     @Test
     void testConstructor2() {
-        Person actualPerson = new Person(1L, "Jane", "Doe", "janedoe", "iloveyou");
+        Person actualPerson = new Person("Jane", "Doe", "janedoe", "iloveyou");
         actualPerson.setFirstName("Jane");
         actualPerson.setLastName("Doe");
         actualPerson.setPassword("iloveyou");

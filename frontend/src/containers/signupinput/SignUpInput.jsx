@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import LoginButtonLogic from "../logininput/LoginButtonLogic";
+import SignUpButtonLogic from "./SignUpButtonLogic";
 
 const SignUpInput = () => {
 
@@ -7,13 +9,6 @@ const SignUpInput = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [reEnterPassword, setReEnterPassword] = useState('');
-
-    const handleSignUp = () => {
-        console.log('Signing Up with:', firstName, email, password);
-
-        setEmail('');
-        setPassword('');
-    };
 
     return (
         <div >
@@ -77,9 +72,7 @@ const SignUpInput = () => {
                             />
                             <label>Remember me</label>
                         </div>
-                        <button type="button" onClick={handleSignUp} >
-                            Sign Up
-                        </button>
+                        <SignUpButtonLogic firstName={firstName} lastName={lastName} email={email} password={password} reEnterPassword={reEnterPassword} />
                     </div>
                 </form>
             </div>

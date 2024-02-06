@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 public class WeightLiftingExercise extends StrengthTrainingExercise {
 
     @Schema(description = "Weight lifted during exercise in kilograms.", example = "60")
-    private double weightInKg;
 
     public double getWeightInKg() {
         return weightInKg;
@@ -18,14 +17,11 @@ public class WeightLiftingExercise extends StrengthTrainingExercise {
         this.weightInKg = weightInKg;
     }
 
-    public WeightLiftingExercise(Long personId, String exerciseName, LocalDateTime startTime, LocalDateTime endTime, Integer caloriesBurned, int sets, int reps, double weightInKg) {
-        super(personId, exerciseName, startTime, endTime, caloriesBurned, sets, reps);
+    public WeightLiftingExercise(Long personId, String exerciseName, LocalDateTime startTime, LocalDateTime endTime, Integer caloriesBurned, int sets, int reps, double weightInKg, String targetMuscle) {
+        super(personId, exerciseName, startTime, endTime, caloriesBurned, sets, reps, targetMuscle);
         this.weightInKg = weightInKg;
+        this.exerciseType = "WeightLifting Exercise";
     }
 
     public WeightLiftingExercise() {}
-    @Override
-    public String getExerciseType(){
-        return "WeightLifting Exercise";
-    }
 }

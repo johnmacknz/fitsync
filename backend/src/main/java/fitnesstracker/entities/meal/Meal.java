@@ -10,13 +10,14 @@ import java.util.Set;
 @Schema(description = "Meal Information")
 public class Meal {
 
-    public Meal(LocalDate mealDate, String mealName, String mealType, Integer calories, String cookingInstructions, Long personId) {
+    public Meal(LocalDate mealDate, String mealName, String mealType, Integer calories, String cookingInstructions, Long personId, byte[] mealImage) {
         this.mealDate = mealDate != null ? mealDate : LocalDate.now();
         this.mealName = mealName;
         this.mealType = mealType;
         this.calories = calories;
         this.cookingInstructions = cookingInstructions;
         this.personId = personId;
+        this.mealImage = mealImage;
     }
 
     public Meal() {
@@ -100,5 +101,19 @@ public class Meal {
     public Long getPersonId() {
         return personId;
     }
+
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    @Column(name = "meal_image", columnDefinition = "MEDIUMBLOB")
+    private byte[] mealImage;
+
+    public byte[] getMealImage() {
+        return mealImage;
+    }
+
+    public void setMealImage(byte[] imageData) {
+        this.mealImage = imageData;
+    }
+
 }
 

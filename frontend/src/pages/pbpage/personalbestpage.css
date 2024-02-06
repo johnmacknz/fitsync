@@ -2,22 +2,26 @@
     margin-bottom: 15px;
     color: #fd7600;
     font-family: var(--font-family);
-}
-
-#exerciseListContainer p {
-    margin-bottom: 5px;
-    color: #a9cafd;
-    font-family: var(--font-family);
+    text-align: center;
 }
 
 #exerciseList {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
+    font-family: var(--font-family);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #exerciseList th {
     background-color: #fd7600;
     color: #fff;
+    border-color: #dddddd;
+}
+
+#exerciseList td {
+    color: #fff;
+    border-color: #dddddd;
 }
 
 #findPersonalBestButton {
@@ -28,6 +32,9 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #findPersonalBestButton:hover {
@@ -51,10 +58,10 @@
     margin: 20% auto;
     padding: 20px;
     border: 1px solid #ddd;
-    width: 80%;
-    color: #333;
+    width: 22%;
+    color: #ddd;
     border-radius: 10px;
-    font-family: var(--font-family)
+    font-family: var(--font-family);
 }
 
 .close {
@@ -72,4 +79,8 @@
     color: #ff9333;
     text-decoration: none;
     cursor: pointer;
+}
+
+.ft__personalbestpage_text {
+    color: #dddddd;
 }

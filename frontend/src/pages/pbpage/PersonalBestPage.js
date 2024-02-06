@@ -10,14 +10,6 @@ const PersonalBestPage = () => {
     const [exerciseName, setExerciseName] = useState('');
     const [exerciseData, setExerciseData] = useState([]);
 
-    const formatDuration = (duration) => {
-        const hours = duration.hours();
-        const minutes = duration.minutes();
-        const seconds = duration.seconds();
-
-        return `${hours}h ${minutes}m ${seconds}s`;
-    };
-
     const fetchAndDisplayExercises = () => {
         let endpoint = `http://localhost:8080/exercises/pb/${metric}/${personId}`;
 
@@ -76,7 +68,7 @@ const PersonalBestPage = () => {
                         <th>Person ID</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="ft__personalbestpage_text">
                     {exerciseData.map(exercise => (
                         <tr key={exercise.id}>
                             <td>{exercise.id}</td>

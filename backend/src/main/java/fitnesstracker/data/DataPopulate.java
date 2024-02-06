@@ -1,6 +1,5 @@
 package fitnesstracker.data;
 
-import fitnesstracker.entities.person.Person;
 import fitnesstracker.entities.exercise.DistanceCardioExercise;
 import fitnesstracker.entities.exercise.Exercise;
 import fitnesstracker.entities.exercise.IsometricExercise;
@@ -8,11 +7,17 @@ import fitnesstracker.entities.exercise.WeightLiftingExercise;
 import fitnesstracker.entities.health.HealthStatistic;
 import fitnesstracker.entities.meal.Ingredient;
 import fitnesstracker.entities.meal.Meal;
+import fitnesstracker.entities.person.Person;
 import fitnesstracker.services.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
 @Component
@@ -43,39 +48,54 @@ public class DataPopulate {
 
         //*******************************************************************************
         String[] meal1IngredientNames = {"chicken", "Vegetables", "Soy Sauce"};
+
+        String imagePath1 = "src/main/resources/chicken-stir-fry-1.jpg";
+        byte[] imageData1 = readImageDataFromFile(imagePath1);
+
         Meal chickenStirFry = new Meal(
                 null,
                 "Chicken Stir Fry",
                 "Lunch",
                 500,
                 "Stir-fry chicken with vegetables and soy sauce",
-                person1.getId()
+                person1.getId(),
+                imageData1
         );
         saveMeal(meal1IngredientNames, chickenStirFry);
         //*******************************************************************************
 
         //*******************************************************************************
         String[] meal2IngredientNames = {"Salmon", "Fresh Salad"};
+
+        String imagePath2 = "src/main/resources/super-food-salmon-salad-hero.jpg";
+        byte[] imageData2 = readImageDataFromFile(imagePath2);
+
         Meal salmonSalad = new Meal(
                 null,
                 "Salmon Salad",
                 "Dinner",
                 400,
                 "Grilled salmon served with a fresh salad",
-                person1.getId()
+                person1.getId(),
+                imageData2
         );
         saveMeal(meal2IngredientNames, salmonSalad);
         //*******************************************************************************
 
         //*******************************************************************************
         String[] meal3IngredientNames = {"Pasta", "Tomato Sauce", "Vegetables", "Cheese"};
+
+        String imagePath3 = "src/main/resources/Spaghetti-with-Baked-Brie-Mushrooms-Spinach-dca7ad0b8a8f4156b78baf9debc988b3.jpg";
+        byte[] imageData3 = readImageDataFromFile(imagePath3);
+
         Meal vegetarianPasta = new Meal(
                 null,
                 "Vegetarian Pasta",
                 "Dinner",
                 600,
                 "Pasta with tomato sauce, vegetables, and cheese",
-                person1.getId()
+                person1.getId(),
+                imageData3
             );
         saveMeal(meal3IngredientNames, vegetarianPasta);
         //*******************************************************************************
@@ -157,5 +177,15 @@ public class DataPopulate {
         }
 
         mealService.saveMeal(meal);
+    }
+
+    private byte @Nullable [] readImageDataFromFile(String imagePath) {
+        try {
+            Path path = Paths.get(imagePath);
+            return Files.readAllBytes(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './MealList.css';
 import UserNavbar from "../../components/usernavbar/UserNavbar";
 import MealTab from "../../containers/mealTab/MealTab";
+import {Link} from "react-router-dom";
 
 const MealList = () => {
     const [meals, setMeals] = useState([]);
@@ -23,7 +24,9 @@ const MealList = () => {
                     <UserNavbar />
                     <div className="tabs-container">
                         {meals.map((meal) => (
-                            <MealTab key={meal.id} meal={meal} />
+                            <Link key={meal.id} to={`/meals/${meal.id}`}>
+                                <MealTab meal={meal} />
+                            </Link>
                         ))}
                     </div>
                 </div>

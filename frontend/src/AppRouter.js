@@ -9,6 +9,7 @@ import Dashboard from "./pages/dashboard/Dashboard"
 import MealDetails from "./pages/mealdetails/MealDetails";
 import HealthStatisticsList from "./pages/healthstats/HealthStatisticsList";
 import ExerciseList from "./pages/exerciselist/ExerciseList";
+import AccountPage from "./pages/account/AccountPage";
 
 const UserContext = createContext();
 const AppRouter = () => {
@@ -31,6 +32,7 @@ const AppRouter = () => {
                     <Route path="/dashboard" element={<Dashboard/>}/>
                     <Route exact path="/meals/:mealId" element={<MealDetails/>}/>
                     <Route path="/stats" element={<HealthStatisticsList/>}/>
+                    <Route path="/account" element={<AccountPage/>}/>
                 </Routes>
             </Router>
         </UserContext.Provider>

@@ -35,4 +35,8 @@ public class PersonService {
         Person person = personRepository.findByEmailAndPassword(email, password);
         return person.getId();
     }
+
+    public Person getPersonById(Long id) {
+        return personRepository.findById(id).orElse(null);
+    }
 }

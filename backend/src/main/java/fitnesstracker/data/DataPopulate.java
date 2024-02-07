@@ -5,10 +5,8 @@ import fitnesstracker.entities.person.Person;
 import fitnesstracker.entities.health.HealthStatistic;
 import fitnesstracker.entities.meal.Ingredient;
 import fitnesstracker.entities.meal.Meal;
-import fitnesstracker.entities.person.Person;
 import fitnesstracker.services.*;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,6 +16,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.Random;
 
 @Component
 public class DataPopulate {
@@ -113,17 +113,17 @@ public class DataPopulate {
                 "Pasta with tomato sauce, vegetables, and cheese",
                 person1.getId(),
                 imageData3
-            );
+        );
         saveMeal(meal3IngredientNames, vegetarianPasta);
         //*******************************************************************************
 
         //*******************************************************************************
-        Exercise exercise1 = new WeightLiftingExercise(person1.getId(), "Barbell rows", LocalDateTime.of(2023, 11, 30, 10, 0), LocalDateTime.of(2023, 11, 30, 11, 0), 250, 5, 5,12, "Back");
+        Exercise exercise1 = new WeightLiftingExercise(person1.getId(), "Barbell rows", LocalDateTime.of(2023, 11, 30, 10, 0), LocalDateTime.of(2023, 11, 30, 11, 0), 250, 5, 5, 12, "Back");
         exercise1.setEquipmentRequired("Barbell and free weights");
         exercise1.setDescription("Just do whatever man");
         exerciseHistoryService.addExercise(exercise1);
 
-        Exercise exercise2 = new WeightLiftingExercise(person1.getId(), "Deadlifts", LocalDateTime.of(2023, 11, 30, 10, 0), LocalDateTime.of(2023, 11, 30, 11, 0), 250, 5, 5,50, "Legs");
+        Exercise exercise2 = new WeightLiftingExercise(person1.getId(), "Deadlifts", LocalDateTime.of(2023, 11, 30, 10, 0), LocalDateTime.of(2023, 11, 30, 11, 0), 250, 5, 5, 50, "Legs");
         exercise2.setEquipmentRequired("Barbell and free weights");
         exercise2.setDescription("Just don't pop your shoulder");
         exerciseHistoryService.addExercise(exercise2);
@@ -136,7 +136,7 @@ public class DataPopulate {
         exerciseHistoryService.addExercise(exercise4);
 
 
-        Exercise exercise5 = new IsometricExercise(person1.getId(), "Plank", LocalDateTime.of(2023, 12, 2, 15, 0), LocalDateTime.of(2023, 12, 2, 15, 5), 50,"Core");
+        Exercise exercise5 = new IsometricExercise(person1.getId(), "Plank", LocalDateTime.of(2023, 12, 2, 15, 0), LocalDateTime.of(2023, 12, 2, 15, 5), 50, "Core");
         exercise5.setDescription("Hold a plank position for 5 minutes");
         exerciseHistoryService.addExercise(exercise5);
 
@@ -183,33 +183,42 @@ public class DataPopulate {
         exerciseHistoryService.addExercise(exercise17);
 
 
-
         //*******************************************************************************
+        for (Person person : Arrays.asList(person1, person2, person3, person4, person5)) {
+            for (int i = 0; i < 50; i++) {
+                double randomWeight = getRandomDoubleInRange(20.0, 30.0);
+                double randomBloodPressure = getRandomDoubleInRange(60.0, 90.0);
+                double randomHydration = getRandomDoubleInRange(70.0, 100.0);
+                double randomCalorieIn = getRandomDoubleInRange(1500.0, 3000.0);
+                double randomCalorieOut = getRandomDoubleInRange(1000.0, 2500.0);
+                double randomHeartRate = getRandomDoubleInRange(60.0, 100.0);
+                double randomStress = getRandomDoubleInRange(0.0, 20.0);
 
-        HealthStatistic healthStatistic1 = new HealthStatistic(null, 23.0, 60.0, 80.0, 90.0, 0, 0, 65.0, 10.0, person1.getId());
-        healthStatisticService.createHealthStatistic(healthStatistic1);
-        HealthStatistic healthStatistic2 = new HealthStatistic(null, 24.0, 61.0, 81.0, 91.0, 0, 0, 66.0, 11.0, person2.getId());
-        healthStatisticService.createHealthStatistic(healthStatistic2);
-        HealthStatistic healthStatistic3 = new HealthStatistic(null, 25.0, 62.0, 82.0, 92.0, 0, 0, 67.0, 12.0, person3.getId());
-        healthStatisticService.createHealthStatistic(healthStatistic3);
-        HealthStatistic healthStatistic4 = new HealthStatistic(null, 26.0, 63.0, 83.0, 93.0, 0, 0, 68.0, 13.0, person4.getId());
-        healthStatisticService.createHealthStatistic(healthStatistic4);
-        HealthStatistic healthStatistic5 = new HealthStatistic(null, 27.0, 64.0, 84.0, 94.0, 0, 0, 69.0, 14.0, person5.getId());
-        healthStatisticService.createHealthStatistic(healthStatistic5);
-        HealthStatistic healthStatistic6 = new HealthStatistic(null, 28.0, 65.0, 85.0, 95.0, 0, 0, 70.0, 15.0, person6.getId());
-        healthStatisticService.createHealthStatistic(healthStatistic6);
-        HealthStatistic healthStatistic7 = new HealthStatistic(null, 29.0, 66.0, 86.0, 96.0, 0, 0, 71.0, 16.0, person7.getId());
-        healthStatisticService.createHealthStatistic(healthStatistic7);
-        HealthStatistic healthStatistic8 = new HealthStatistic(null, 30.0, 67.0, 87.0, 97.0, 0, 0, 72.0, 17.0, person8.getId());
-        healthStatisticService.createHealthStatistic(healthStatistic8);
-        HealthStatistic healthStatistic9 = new HealthStatistic(null, 31.0, 68.0, 88.0, 98.0, 0, 0, 73.0, 18.0, person9.getId());
-        healthStatisticService.createHealthStatistic(healthStatistic9);
-        HealthStatistic healthStatistic10 = new HealthStatistic(null, 32.0, 69.0, 89.0, 99.0, 0, 0, 74.0, 19.0, person10.getId());
-        healthStatisticService.createHealthStatistic(healthStatistic10);
-        HealthStatistic healthStatistic11 = new HealthStatistic(null, 32.0, 69.0, 89.0, 99.0, 0, 0, 74.0, 19.0, person11.getId());
+                HealthStatistic healthStatistic = new HealthStatistic(
+                        null,
+                        randomWeight,
+                        randomBloodPressure,
+                        randomHydration,
+                        randomCalorieIn,
+                        0,
+                        0,
+                        randomHeartRate,
+                        randomStress,
+                        person.getId()
+                );
+
+                healthStatisticService.createHealthStatistic(healthStatistic);
+            }
+        }HealthStatistic healthStatistic11 = new HealthStatistic(null, 32.0, 69.0, 89.0, 99.0, 0, 0, 74.0, 19.0, person11.getId());
         healthStatisticService.createHealthStatistic(healthStatistic11);
-
+//*******************************************************************************************
     }
+
+    private static double getRandomDoubleInRange ( double min, double max){
+        Random r = new Random();
+        return min + (max - min) * r.nextDouble();
+    }
+
     private void saveMeal(String @NotNull [] mealIngredientNames, Meal meal) {
         for (String ingredientName : mealIngredientNames) {
             if (ingredientService.getIngredientByIngredientName(ingredientName) == null) {

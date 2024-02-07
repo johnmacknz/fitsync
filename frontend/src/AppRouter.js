@@ -8,6 +8,7 @@ import PersonalBestPage from "./pages/pbpage/PersonalBestPage";
 import Dashboard from "./pages/dashboard/Dashboard"
 import MealDetails from "./pages/mealdetails/MealDetails";
 import HealthStatisticsList from "./pages/healthstats/HealthStatisticsList";
+import ExerciseList from "./pages/exerciselist/ExerciseList";
 
 const UserContext = createContext();
 const AppRouter = () => {
@@ -25,6 +26,7 @@ const AppRouter = () => {
                     <Route path="/signup" element={<SignUp/>}/>
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/meals" element={<MealList/>}/>
+                    <Route path="/exercises" element={<ExerciseList />} />
                     <Route path="/pb" element={<PersonalBestPage/>}/>
                     <Route path="/dashboard" element={<Dashboard/>}/>
                     <Route exact path="/meals/:mealId" element={<MealDetails/>}/>

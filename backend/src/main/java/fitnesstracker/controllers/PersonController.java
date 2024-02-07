@@ -55,7 +55,8 @@ public class PersonController {
         } else {
             Person person = new Person(firstName, lastName, email, password);
             personService.savePerson(person);
-            return ResponseEntity.ok("Sign up successful");
+            long personId = personService.getIdByEmailAndPassword(email, password);
+            return ResponseEntity.ok(String.valueOf(personId));
         }
     }
 }

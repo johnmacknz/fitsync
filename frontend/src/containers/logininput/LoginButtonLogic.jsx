@@ -16,7 +16,7 @@ const LoginButtonLogic = ({ email, password }) => {
             });
 
             if (response.ok) {
-                const userId = await response.text(); // Parse response text
+                const userId = await response.text();
                 updateUserId(userId);
                 console.log(`Authentication successful - signed in as user ${userId}`);
                 navigate('/dashboard');

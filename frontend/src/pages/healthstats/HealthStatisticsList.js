@@ -1,29 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import './healthStatistics.css';
 import UserNavbar from "../../components/usernavbar/UserNavbar";
+import {useUserId} from "../../AppRouter";
 
 const HealthStatisticList = () => {
     const [healthStatistics, setHealthStatistics] = useState([]);
-    const [newData, setNewData] = useState({
-        personId: '',
-        sleep: '',
-        weight: '',
-        bloodPressure: '',
-        hydration: '',
-        calorieIn: '',
-        calorieOut: '',
-        heartRate: '',
-        stress: '',
-    });
+    const [newData, setNewData] = useState([]);
+    const { userId } = useUserId();
 
     useEffect(() => {
         // Fetch all health statistics
-        fetch('http://localhost:8080/stats')
+        fetch(`http://localhost:8080/stats/person/${userId}`)
             .then(response => response.json())
             .then(data => setHealthStatistics(data))
             .catch(error => console.error('Error fetching health statistics:', error));
     }, []); // The empty dependency array ensures the effect runs only once on mount
 
+    const statisticsWithPerson = {
+        ...newData,
+        personId: userId,
+        healthDate: new Date().toISOString().split('T')[0],
+    };
     const handleInsertHealthStatistic = async () => {
         try {
             // Make a POST request to insert a health statistic
@@ -32,7 +29,7 @@ const HealthStatisticList = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(newData),
+                body: JSON.stringify(statisticsWithPerson),
             });
 
             // Handle the API response
@@ -41,7 +38,7 @@ const HealthStatisticList = () => {
                 console.log('Health statistic inserted successfully');
                 // Fetch health statistics again to update the list
                 try {
-                    const newResponse = await fetch('http://localhost:8080/stats');
+                    const newResponse = await fetch(`http://localhost:8080/stats/person/${userId}`);
                     const newData = await newResponse.json();
                     setHealthStatistics(newData);
                 } catch (error) {
@@ -66,14 +63,14 @@ const HealthStatisticList = () => {
             <UserNavbar />
             <h2 className="form-header">Health Statistics</h2>
             <form className="tabs-container">
-                <label className="form-label">
-                    Person ID:
-                    <input className="value-input"
-                           type="number"
-                           value={newData.personId}
-                           onChange={(e) => setNewData({ ...newData, personId: e.target.value })}
-                    />
-                </label >
+                {/*<label className="form-label">*/}
+                {/*    Person ID:*/}
+                {/*    <input className="value-input"*/}
+                {/*           type="number"*/}
+                {/*           value={newData.personId}*/}
+                {/*           onChange={(e) => setNewData({ ...newData, personId: e.target.value })}*/}
+                {/*    />*/}
+                {/*</label >*/}
                 <label className="form-label">
                     Sleep:
                     <input className="value-input"
@@ -145,7 +142,7 @@ const HealthStatisticList = () => {
             <table>
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    {/*<th>ID</th>*/}
                     <th>Health Date</th>
                     <th>Sleep</th>
                     <th>Weight</th>
@@ -155,13 +152,13 @@ const HealthStatisticList = () => {
                     <th>Calorie Out</th>
                     <th>Heart Rate</th>
                     <th>Stress</th>
-                    <th>Person ID</th>
+                    {/*<th>Person ID</th>*/}
                 </tr>
                 </thead>
                 <tbody>
                 {healthStatistics.map(statistic => (
                     <tr key={statistic.id}>
-                        <td>{statistic.id}</td>
+                        {/*<td>{statistic.id}</td>*/}
                         <td>{statistic.healthDate}</td>
                         <td>{statistic.sleep}</td>
                         <td>{statistic.weight}</td>
@@ -171,7 +168,7 @@ const HealthStatisticList = () => {
                         <td>{statistic.calorieOut}</td>
                         <td>{statistic.heartRate}</td>
                         <td>{statistic.stress}</td>
-                        <td>{statistic.personId}</td>
+                        {/*<td>{statistic.personId}</td>*/}
                     </tr>
                 ))}
                 </tbody>

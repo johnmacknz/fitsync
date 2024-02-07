@@ -13,7 +13,7 @@ const UserNavbar = () => {
                     <Link to="/dashboard">Dashboard</Link>
                     <Link to="/meals">Meals</Link>
                     <Link to="/exercise">Exercise History</Link>
-                    <Link to="/health">Health</Link>
+                    <Link to="/stats">Health</Link>
                     <Link to="/pb">Personal Bests</Link>
                 </div>
             </div>

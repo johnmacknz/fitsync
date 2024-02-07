@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from "react";
 import UserNavbar from "../../components/usernavbar/UserNavbar";
-
+import {useUserId} from "../../AppRouter";
 
 const ExerciseListInput = () => {
 
     const [exercises, setExercises] = useState([]);
     const [exercise, setExercise] = useState({
         exerciseName: '',
-        personId: '',
         exerciseType: '',
         targetMuscle: '',
         equipmentRequired: '',
@@ -23,16 +22,17 @@ const ExerciseListInput = () => {
     const [selectedExerciseType, setSelectedExerciseType] = useState('');
 
     const [visibleColumns, setVisibleColumns] = useState([]);
+    const { userId } = useUserId();
 
 
     useEffect(() => {
         // Fetch existing exercises
-        let apiUrl = 'http://localhost:8080/exercises';
+        let apiUrl = `http://localhost:8080/exercises/person/${userId}`;
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => setExercises(data))
             .catch(error => console.error('Error fetching exercises:', error));
-    }, []);
+    }, [userId]);
 
     const handleChange = (e) => {
         setExercise({
@@ -48,7 +48,17 @@ const ExerciseListInput = () => {
         const exerciseWithType = {
             ...exercise,
             exerciseType: selectedExerciseType,
+            personId: userId,
         };
+
+        const invalidFields = ['targetMuscle', 'exerciseName', 'equipmentRequired', 'caloriesBurned']
+            .filter(field => !isNaN(exerciseWithType[field]));
+
+        if (invalidFields.length > 0) {
+            // Display an alert for invalid input
+            window.alert(`Invalid input for ${invalidFields.join(', ')}. Please enter non-numeric values.`);
+            return;
+        }
 
         // Perform the POST request to add the new exercise
         fetch('http://localhost:8080/exercises', {
@@ -63,7 +73,6 @@ const ExerciseListInput = () => {
                 setExercises([...exercises, data]);
                 setExercise({
                     exerciseName: '',
-                    personId: '',
                     exerciseType: '',
                     targetMuscle: '',
                     equipmentRequired: '',
@@ -91,19 +100,19 @@ const ExerciseListInput = () => {
         // Define which columns to display based on the exercise type
         switch (type) {
             case 'BodyWeight Exercise':
-                setVisibleColumns(['exerciseName', 'personId', 'startTime', 'endTime', 'caloriesBurned', 'sets', 'reps', 'targetMuscle', 'description']);
+                setVisibleColumns(['exerciseName', 'startTime', 'endTime', 'caloriesBurned', 'sets', 'reps', 'targetMuscle', 'description']);
                 break;
             case 'WeightLifting Exercise':
-                setVisibleColumns(['exerciseName', 'personId', 'startTime', 'endTime', 'caloriesBurned', 'sets', 'reps', 'weightInKg', 'targetMuscle', 'equipmentRequired', 'description']);
+                setVisibleColumns(['exerciseName', 'startTime', 'endTime', 'caloriesBurned', 'sets', 'reps', 'weightInKg', 'targetMuscle', 'equipmentRequired', 'description']);
                 break;
             case 'Isometric Exercise':
-                setVisibleColumns(['exerciseName', 'personId', 'startTime', 'endTime', 'caloriesBurned', 'targetMuscle', 'description']);
+                setVisibleColumns(['exerciseName', 'startTime', 'endTime', 'caloriesBurned', 'targetMuscle', 'description']);
                 break;
             case 'Distance Cardio Exercise':
-                setVisibleColumns(['exerciseName', 'personId', 'startTime', 'endTime', 'caloriesBurned', 'distanceInKm', 'description']);
+                setVisibleColumns(['exerciseName', 'startTime', 'endTime', 'caloriesBurned', 'distanceInKm', 'description']);
                 break;
             case 'No Distance Cardio Exercise':
-                setVisibleColumns(['exerciseName', 'personId', 'startTime', 'endTime', 'caloriesBurned', 'description']);
+                setVisibleColumns(['exerciseName', 'startTime', 'endTime', 'caloriesBurned', 'description']);
                 break;
             default:
                 setVisibleColumns([]);
@@ -155,11 +164,6 @@ const ExerciseListInput = () => {
                             <label>Exercise Name:</label>
                             <input type="text" name="exerciseName" value={exercise.exerciseName}
                                    onChange={handleChange}/>
-                        </div>
-
-                        <div className="form-group">
-                            <label>Person ID:</label>
-                            <input type="number" name="personId" value={exercise.personId} onChange={handleChange}/>
                         </div>
 
                         <div className="form-group">

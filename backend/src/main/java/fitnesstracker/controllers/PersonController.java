@@ -59,5 +59,15 @@ public class PersonController {
             return ResponseEntity.ok(String.valueOf(personId));
         }
     }
+
+    @GetMapping("/account/{id}")
+    public ResponseEntity<Person> getPersonDetails(@PathVariable Long id) {
+        Person person = personService.getPersonById(id);
+        if (person != null) {
+            return ResponseEntity.ok(person);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
 

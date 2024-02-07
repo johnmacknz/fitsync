@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import '../healthstats/healthStatistics.css';
 import UserNavbar from "../../components/usernavbar/UserNavbar";
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, Label, Rectangle } from 'recharts';
+import {useUserId} from "../../AppRouter";
 
 const HealthStatisticList = () => {
     const [healthStatistics, setHealthStatistics] = useState([]);
+    const { userId } = useUserId();
 
     useEffect(() => {
         // Fetch all health statistics
-        fetch('http://localhost:8080/stats')
+        fetch(`http://localhost:8080/stats/person/${userId}`)
             .then(response => response.json())
             .then(data => setHealthStatistics(data))
             .catch(error => console.error('Error fetching health statistics:', error));

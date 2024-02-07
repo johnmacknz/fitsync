@@ -1,10 +1,7 @@
 package fitnesstracker.data;
 
+import fitnesstracker.entities.exercise.*;
 import fitnesstracker.entities.person.Person;
-import fitnesstracker.entities.exercise.DistanceCardioExercise;
-import fitnesstracker.entities.exercise.Exercise;
-import fitnesstracker.entities.exercise.IsometricExercise;
-import fitnesstracker.entities.exercise.WeightLiftingExercise;
 import fitnesstracker.entities.health.HealthStatistic;
 import fitnesstracker.entities.meal.Ingredient;
 import fitnesstracker.entities.meal.Meal;
@@ -168,6 +165,24 @@ public class DataPopulate {
         Exercise exercise11 = new IsometricExercise(person2.getId(), "Plank with Shoulder Taps", LocalDateTime.of(2023, 12, 20, 16, 0), LocalDateTime.of(2023, 12, 20, 16, 5), 70, "Core");
         exercise11.setDescription("Plank with alternating shoulder taps for added challenge");
         exerciseHistoryService.addExercise(exercise11);
+
+        Exercise exercise12 = new BodyweightExercise(person2.getId(), "Push-ups", LocalDateTime.of(2023, 12, 18, 14, 0), LocalDateTime.of(2023, 12, 18, 14, 5), 150, 3, 10, "Chest");
+        exercise12.setDescription("Just do it");
+        exerciseHistoryService.addExercise(exercise12);
+
+        Exercise exercise13 = new NoDistanceCardioExercise(person2.getId(), "Burpees", LocalDateTime.of(2023, 12, 18, 14, 0), LocalDateTime.of(2023, 12, 18, 14, 5), 100);
+        exercise13.setDescription("Let's see your cardio skills");
+        exerciseHistoryService.addExercise(exercise13);
+
+        Exercise exercise16 = new BodyweightExercise(person2.getId(), "Squats", LocalDateTime.of(2023, 12, 21, 15, 0), LocalDateTime.of(2023, 12, 21, 15, 15), 100, 3, 15, "Legs");
+        exercise16.setDescription("Keep your knees aligned and go as low as you can comfortably");
+        exerciseHistoryService.addExercise(exercise16);
+
+        Exercise exercise17 = new NoDistanceCardioExercise(person2.getId(), "Jumping Jacks", LocalDateTime.of(2023, 12, 22, 9, 0), LocalDateTime.of(2023, 12, 22, 9, 10), 200);
+        exercise17.setDescription("A classic cardio exercise to get your heart pumping");
+        exerciseHistoryService.addExercise(exercise17);
+
+
 
         //*******************************************************************************
 

@@ -3,5 +3,9 @@
     flex-wrap: wrap;
     justify-content: left;
     margin-left: 80px;
+    border-radius: 10px;
 }
 
+.tabs-container img {
+    border-radius: 10px;
+}

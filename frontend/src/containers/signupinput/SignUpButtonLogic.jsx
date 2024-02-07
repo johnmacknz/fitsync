@@ -1,27 +1,35 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import {useUserId} from "../../AppRouter";
 
 const SignUpButtonLogic = ({ firstName, lastName, email, password, reEnterPassword }) => {
+
     const navigate = useNavigate();
+    const { updateUserId } = useUserId();
 
     const handleSignUp = async () => {
         try {
-            const response = fetch('http://localhost:8080/person/signup', {
+            const response = await fetch('http://localhost:8080/person/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ firstName, lastName, email, password, reEnterPassword }),
-            }).then(response => {
-                if (response.ok) {
-                    console.log(response.text());
-                    navigate('/dashboard');
-                } else {
-                    console.log(response.text());
-                }
             });
+
+            if (response.ok) {
+                const userId = await response.text();
+                updateUserId(userId);
+                console.log(`Sign up successful - signed in as user ${userId}`);
+                navigate('/dashboard');
+            } else if (response.status === 401) {
+                const responseMsg = await response.text();
+                console.log(responseMsg);
+            } else {
+                console.log("Internal error")
+            }
         } catch (error) {
-            console.error('Error during sign up:', error);
+            console.error('Error during login:', error);
         }
     };
 

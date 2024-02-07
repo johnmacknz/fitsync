@@ -30,4 +30,9 @@ public class PersonService {
     public boolean isEmailInUse(String email) {
         return personRepository.existsByEmail(email);
     }
+
+    public long getIdByEmailAndPassword(String email, String password) {
+        Person person = personRepository.findByEmailAndPassword(email, password);
+        return person.getId();
+    }
 }

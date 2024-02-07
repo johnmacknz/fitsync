@@ -24,6 +24,7 @@ const ExerciseListInput = () => {
 
     const [visibleColumns, setVisibleColumns] = useState([]);
 
+
     useEffect(() => {
         // Fetch existing exercises
         let apiUrl = 'http://localhost:8080/exercises';
@@ -43,16 +44,39 @@ const ExerciseListInput = () => {
     const handleAddExercise = (e) => {
         e.preventDefault();
 
+
+        const exerciseWithType = {
+            ...exercise,
+            exerciseType: selectedExerciseType,
+        };
+
         // Perform the POST request to add the new exercise
         fetch('http://localhost:8080/exercises', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(exercise),
+            body: JSON.stringify(exerciseWithType),
         })
             .then(response => response.json())
-            .then(data => setExercises([...exercises, data]))
+            .then(data => {
+                setExercises([...exercises, data]);
+                setExercise({
+                    exerciseName: '',
+                    personId: '',
+                    exerciseType: '',
+                    targetMuscle: '',
+                    equipmentRequired: '',
+                    startTime: '',
+                    endTime: '',
+                    caloriesBurned: '',
+                    sets: '',
+                    reps: '',
+                    distanceInKm: '',
+                    weightInKg: '',
+                    description: ''
+                });
+            })
             .catch(error => console.error('Error adding exercise:', error));
     };
 
@@ -102,7 +126,8 @@ const ExerciseListInput = () => {
                 ))}
             </div>
 
-            <h2>Exercise List:</h2>
+
+            <h2>Activities:</h2>
             <table>
                 <thead>
                 <tr>
@@ -138,18 +163,6 @@ const ExerciseListInput = () => {
                         </div>
 
                         <div className="form-group">
-                            <label>Exercise Type:</label>
-                            <select name="exerciseType" value={exercise.exerciseType} onChange={handleChange}>
-                                <option value="">Select Exercise Type</option>
-                                <option value="Isometric Exercise">Isometric</option>
-                                <option value="WeightLifting Exercise">WeightLifting</option>
-                                <option value="BodyWeight Exercise">BodyWeight</option>
-                                <option value="Distance Cardio Exercise">Distance Cardio</option>
-                                <option value="No Distance Cardio Exercise">No Distance Cardio</option>
-                            </select>
-                        </div>
-
-                        <div className="form-group">
                             <label>Start time:</label>
                             <input type="datetime-local" name="startTime" value={exercise.startTime}
                                    onChange={handleChange}/>
@@ -167,7 +180,6 @@ const ExerciseListInput = () => {
                                    onChange={handleChange}/>
                         </div>
 
-                        {/* Display specific form fields based on the selected exercise type */}
                         {selectedExerciseType === 'Isometric Exercise' && (
                             <>
                                 <div className="form-group">

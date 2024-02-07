@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/stats")
 @Tag(name = "Health Statistics", description = "Health Statistics APIs")
 public class HealthStatisticController {
@@ -54,18 +55,17 @@ public class HealthStatisticController {
     @Operation(summary = "Post data to Health Statistics", description = "Post Health Statistics",
             tags = {"stats", "post"})
     @PostMapping
-    public ResponseEntity<HealthStatistic> createHealthStatistic(@RequestBody @NotNull HealthStatistic healthStatistic) {
+    public ResponseEntity<String> createHealthStatistic(@RequestBody @NotNull HealthStatistic healthStatistic) {
         @SuppressWarnings("unused")
         Long personId = healthStatistic.getPersonId();
 
         // Check if personId already exists
         if (!healthStatisticService.existsByPersonId(personId)) {
-            // PersonId does not exists, return an error response
-            throw new EntityNotFoundException("Person with ID " + personId + " not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Person not found!");
         } else {
             HealthStatistic createdHealthStatistic = healthStatisticService.createHealthStatistic(healthStatistic);
 
-            return ResponseEntity.status(HttpStatus.CREATED).body(createdHealthStatistic);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Health Statistic record added!");
         }
     }
     @Operation(summary = "Delete data from Health Statistics", description = "Delete Health Statistics",

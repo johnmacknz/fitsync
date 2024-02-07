@@ -182,17 +182,16 @@ public class DataPopulate {
         exercise17.setDescription("A classic cardio exercise to get your heart pumping");
         exerciseHistoryService.addExercise(exercise17);
 
-
         //*******************************************************************************
         for (Person person : Arrays.asList(person1, person2, person3, person4, person5)) {
             for (int i = 0; i < 50; i++) {
-                double randomWeight = getRandomDoubleInRange(20.0, 30.0);
-                double randomBloodPressure = getRandomDoubleInRange(60.0, 90.0);
-                double randomHydration = getRandomDoubleInRange(70.0, 100.0);
-                double randomCalorieIn = getRandomDoubleInRange(1500.0, 3000.0);
-                double randomCalorieOut = getRandomDoubleInRange(1000.0, 2500.0);
-                double randomHeartRate = getRandomDoubleInRange(60.0, 100.0);
-                double randomStress = getRandomDoubleInRange(0.0, 20.0);
+                int randomWeight = getRandomIntInRange(20, 30);
+                int randomBloodPressure = getRandomIntInRange(60, 90);
+                int randomHydration = getRandomIntInRange(70, 100);
+                int randomCalorieIn = getRandomIntInRange(1500, 3000);
+                int randomCalorieOut = getRandomIntInRange(1000, 2500);
+                int randomHeartRate = getRandomIntInRange(60, 100);
+                int randomStress = getRandomIntInRange(0, 20);
 
                 HealthStatistic healthStatistic = new HealthStatistic(
                         null,
@@ -209,11 +208,14 @@ public class DataPopulate {
 
                 healthStatisticService.createHealthStatistic(healthStatistic);
             }
-        }HealthStatistic healthStatistic11 = new HealthStatistic(null, 32.0, 69.0, 89.0, 99.0, 0, 0, 74.0, 19.0, person11.getId());
-        healthStatisticService.createHealthStatistic(healthStatistic11);
-//*******************************************************************************************
+        }
     }
-
+    //*******************************************************************************************
+    // Helper method to get a random integer in a specified range
+    private int getRandomIntInRange(int min, int max) {
+        Random random = new Random();
+        return random.nextInt(max - min + 1) + min;
+    }
     private static double getRandomDoubleInRange ( double min, double max){
         Random r = new Random();
         return min + (max - min) * r.nextDouble();

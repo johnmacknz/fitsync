@@ -10,4 +10,6 @@ public interface PersonRepository extends ListCrudRepository<Person, Long> {
     boolean existsByEmailAndPassword(String email, String password);
 
     boolean existsByEmail(String email);
+
+    Person findByEmailAndPassword(String email, String password);
 }

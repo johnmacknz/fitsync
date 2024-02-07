@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import moment from 'moment';
 import UserNavbar from "../../components/usernavbar/UserNavbar";
 import './personalbestpage.css';
+import {useUserId} from "../../AppRouter";
 
 const PersonalBestPage = () => {
     const [modalVisible, setModalVisible] = useState(false);
     const [metric, setMetric] = useState('weight');
-    const [personId, setPersonId] = useState('');
     const [exerciseName, setExerciseName] = useState('');
     const [exerciseData, setExerciseData] = useState([]);
+    const { userId } = useUserId();
 
     const fetchAndDisplayExercises = () => {
-        let endpoint = `http://localhost:8080/exercises/pb/${metric}/${personId}`;
+        let endpoint = `http://localhost:8080/exercises/pb/${metric}/${userId}`;
 
         if (exerciseName) {
             endpoint += `/${exerciseName}`;
@@ -38,10 +39,6 @@ const PersonalBestPage = () => {
         setMetric(event.target.value);
     };
 
-    const handlePersonIdChange = (event) => {
-        setPersonId(event.target.value);
-    };
-
     const handleExerciseNameChange = (event) => {
         setExerciseName(event.target.value);
     };
@@ -54,7 +51,6 @@ const PersonalBestPage = () => {
                 <table id="exerciseList" border="1">
                     <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Exercise Name</th>
                         <th>Equipment Required</th>
                         <th>Start Time</th>
@@ -65,13 +61,11 @@ const PersonalBestPage = () => {
                         <th>Sets</th>
                         <th>Reps</th>
                         <th>Description</th>
-                        <th>Person ID</th>
                     </tr>
                     </thead>
                     <tbody className="ft__personalbestpage_text">
                     {exerciseData.map(exercise => (
                         <tr key={exercise.id}>
-                            <td>{exercise.id}</td>
                             <td>{exercise.exerciseName}</td>
                             <td>{exercise.equipmentRequired}</td>
                             <td>{moment(exercise.startTime).format('YYYY-MM-DD HH:mm')}</td>
@@ -82,7 +76,6 @@ const PersonalBestPage = () => {
                             <td>{exercise.sets || '-'}</td>
                             <td>{exercise.reps || '-'}</td>
                             <td>{exercise.description}</td>
-                            <td>{exercise.personId}</td>
                         </tr>
                     ))}
                     </tbody>
@@ -102,9 +95,6 @@ const PersonalBestPage = () => {
                             <option value="sets">Sets</option>
                             <option value="reps">Reps</option>
                         </select>
-                        <br />
-                        <label htmlFor="personId">Person ID:</label>
-                        <input type="number" id="personId" name="personId" value={personId} onChange={handlePersonIdChange} required />
                         <br />
                         <label htmlFor="exerciseName">Exercise Name (optional):</label>
                         <input type="text" id="exerciseName" name="exerciseName" value={exerciseName} onChange={handleExerciseNameChange} />

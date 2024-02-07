@@ -1,5 +1,6 @@
 package fitnesstracker.controllers;
 
+import fitnesstracker.entities.meal.Ingredient;
 import fitnesstracker.entities.meal.Meal;
 import fitnesstracker.services.MealService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Set;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -82,4 +84,19 @@ public class MealController {
     public void setMealService(MealService mealService) {
         this.mealService = mealService;
     }
+
+    @GetMapping("/{mealId}/ingredients")
+    @Operation(summary = "Get Ingredients for a Meal", description = "Returns the ingredients of a specific Meal based on its ID",
+            tags = {"meals", "get"})
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", content = {@Content(schema = @Schema(implementation = Set.class), mediaType = "application/json")}, description = "Successfully retrieved"),
+            @ApiResponse(responseCode = "404", description = "Not Found", content = {@Content(schema = @Schema())})
+    })
+    public Set<Ingredient> getIngredientsForMeal(@PathVariable Long mealId) {
+        Meal meal = mealService.getMealById(mealId);
+        if (meal == null)
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Meal not found");
+        return meal.getIngredients();
+    }
+
 }

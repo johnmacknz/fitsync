@@ -2,8 +2,5 @@
 /backend.iml
 
 .idea
-./target
-/target/test-classes/cucumber.properties
-/target/test-classes/stepdefinitions/CucumberSpringConfiguration.class
-/target/test-classes/features/healthStatistic.feature
-/target/test-classes/stepdefinitions/HealthStatisticsStepdefinitions.class
+/target
+

@@ -57,7 +57,6 @@ const HealthStatisticList = () => {
         }
     };
 
-
     return (
         <div className="ft__login__container">
             <UserNavbar />

@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import UserNavbar from "../../components/usernavbar/UserNavbar";
-import {LineChart, Line, Bar, BarChart, XAxis, YAxis, Tooltip, Legend, Label, Rectangle} from 'recharts';
+import {Bar, BarChart, Label, Legend, Line, LineChart, Rectangle, Tooltip, XAxis, YAxis} from 'recharts';
 import {useUserId} from "../../AppRouter";
 import "./dashboard.css"
 import moment from 'moment';

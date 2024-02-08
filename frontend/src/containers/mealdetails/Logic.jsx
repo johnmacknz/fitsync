@@ -34,18 +34,40 @@ const Logic = () => {
                     <h2>{meal["mealName"]}</h2>
                     <p>{meal["mealType"]}</p>
                 </div>
+                <div className="ft__logic_subtitle">
+                    <div className="ft__logic_cookingTime">
+                    <i className="gg-timer"></i>
+                    <h2>{meal["cookingTime"]}</h2>
+                    </div>
+                    <div className="ft__logic_difficulty">
+                        <i className="gg-thermostat"></i>
+                    <h2>{meal["difficulty"]}</h2>
+                    </div>
+                    <div className="ft__logic_difficulty">
+                        <i className="gg-bolt"></i>
+                    <h2>{meal["calories"]} Kcal</h2>
+                    </div>
+                </div>
                 <div className="ft__logic_image">
                     <img src={`data:image/jpeg;base64,${meal["mealImage"]}`} alt="Meal" />
                 </div>
             </div>
             <div className="ft__logic_details">
                 <div className="ingredients">
+                    <div className="ft__logic_ingredients_header">
+                    <i className="gg-shopping-cart"></i>
                     <h3>Ingredients:</h3>
-                    <ul>
-                        {ingredients.map((ingredient) => (
-                            <li key={ingredient.id}>{ingredient["ingredientName"]}</li>
-                        ))}
-                    </ul>
+                    </div>
+                    <div className="serves">
+                    <h4>Serves: {meal["serves"]} People</h4>
+                    </div>
+                    <div className="ft__logic_ingredients">
+                        <ul>
+                            {ingredients.map((ingredient, index) => (
+                                <li key={index}><i className="gg-pentagon-right"></i>{ingredient["ingredientName"]}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
                 <div className="ft__logic_cooking">
                     <h3>Cooking Instructions:</h3>

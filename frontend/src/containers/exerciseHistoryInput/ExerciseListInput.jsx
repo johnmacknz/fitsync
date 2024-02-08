@@ -46,6 +46,8 @@ const ExerciseListInput = () => {
             .then(response => response.json())
             .then(data => setExercises(data))
             .catch(error => console.error('Error fetching exercises:', error));
+
+        handleExerciseTypeButtonClick('BodyWeight Exercise');
     }, [userId]);
 
     const handleChange = (e) => {

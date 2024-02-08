@@ -39,6 +39,9 @@ public class DataPopulate {
 
     public void populateData() {
         //*******************************************************************************
+
+        Person admin = new Person("admin", "admin", "admin", "admin");
+        personService.savePerson(admin);
         Person person1 = new Person("Bobby", "Donald", "bob123@fitsync.com", "password1");
         personService.savePerson(person1);
         Person person2 = new Person("Billy", "Bolt", "bill123fitsync.com", "password2");
@@ -61,6 +64,7 @@ public class DataPopulate {
         personService.savePerson(person10);
         Person person11 = new Person("Test", "user", "1", "1");
         personService.savePerson(person11);
+
         //*******************************************************************************
 
         //*******************************************************************************
@@ -154,13 +158,23 @@ public class DataPopulate {
         exercise8Person1.setDescription("Engage your core and maintain a straight line");
         exerciseHistoryService.addExercise(exercise8Person1);
 
-        Exercise exercise9Person1 = new BodyweightExercise(person1.getId(), "Lunges", LocalDateTime.of(2023, 12, 9, 11, 0), LocalDateTime.of(2023, 12, 9, 11, 15), 0, 3, 12, "Legs");
+        Exercise exercise9Person1 = new BodyweightExercise(person1.getId(), "Lunges", LocalDateTime.of(2023, 12, 9, 11, 0), LocalDateTime.of(2023, 12, 9, 11, 15), 50, 3, 12, "Legs");
         exercise9Person1.setDescription("Focus on balance and controlled movements");
         exerciseHistoryService.addExercise(exercise9Person1);
 
         Exercise exercise10Person1 = new NoDistanceCardioExercise(person1.getId(), "High Knees", LocalDateTime.of(2023, 12, 10, 10, 0), LocalDateTime.of(2023, 12, 10, 10, 10), 150);
         exercise10Person1.setDescription("Elevate your heart rate with high-intensity cardio");
         exerciseHistoryService.addExercise(exercise10Person1);
+
+        Exercise exercise11Person1 = new WeightLiftingExercise(person1.getId(), "Squats", LocalDateTime.of(2023, 11, 1, 10, 0), LocalDateTime.of(2023, 11, 1, 11, 30), 210, 3, 10, 30, "Legs");
+        exercise11Person1.setEquipmentRequired("Barbell and free weights");
+        exercise11Person1.setDescription("Maintain proper form throughout");
+        exerciseHistoryService.addExercise(exercise11Person1);
+
+        Exercise exercise12Person1 = new WeightLiftingExercise(person1.getId(), "Squats", LocalDateTime.of(2023, 12, 23, 10, 0), LocalDateTime.of(2023, 12, 23, 10, 30), 250, 3, 10, 60, "Legs");
+        exercise12Person1.setEquipmentRequired("Barbell and free weights");
+        exercise12Person1.setDescription("Maintain proper form throughout");
+        exerciseHistoryService.addExercise(exercise12Person1);
 
         //Person2 exercises
         Exercise exercise1Person2 = new WeightLiftingExercise(person2.getId(), "Deadlifts", LocalDateTime.of(2023, 12, 11, 12, 0), LocalDateTime.of(2023, 12, 11, 13, 0), 250, 5, 5, 50, "Legs");

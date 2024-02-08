@@ -10,6 +10,7 @@ import MealDetails from "./pages/mealdetails/MealDetails";
 import HealthStatisticsList from "./pages/healthstats/HealthStatisticsList";
 import ExerciseList from "./pages/exerciselist/ExerciseList";
 import AccountPage from "./pages/account/AccountPage";
+import { Navigate } from 'react-router-dom';
 
 const UserContext = createContext();
 const AppRouter = () => {
@@ -19,9 +20,18 @@ const AppRouter = () => {
         setUserId(newUserId);
     }
 
+    const checkForUserId = () => {
+        const allowedRoutes = ['/', '/login', '/signup'];
+      if (userId === null && !allowedRoutes.includes(window.location.pathname)) {
+          return <Navigate to = "/login" />;
+      }
+      return null;
+    }
+
     return (
         <UserContext.Provider value={{ userId, updateUserId }}>
             <Router>
+                {checkForUserId()}
                 <Routes>
                     <Route path="/" element={<App/>}/>
                     <Route path="/signup" element={<SignUp/>}/>

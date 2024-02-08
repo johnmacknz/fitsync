@@ -1,30 +1,9 @@
 import UserNavbar from "../../components/usernavbar/UserNavbar";
-import React, { useState, useEffect } from 'react';
-import {useUserId} from "../../AppRouter";
+import useFetchUserDetails from "../../apis/accountapis/useFetchUserDetails";
 
 const AccountPage = () => {
-    const [personDetails, setPersonDetails] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const { userId } = useUserId();
 
-    useEffect(() => {
-        const fetchData = async () => {
-            console.log("User ID:", userId);
-            try {
-                const response = await fetch("http://localhost:8080/person/account/" + userId);
-                if (!response.ok) {
-                    console.log('Failed to fetch user data');
-                }
-                const data = await response.json();
-                setPersonDetails(data);
-                setLoading(false);
-            } catch (error) {
-                console.error('Error fetching user data:', error);
-                setLoading(false);
-            }
-        };
-        fetchData();
-    }, [userId]);
+    const { personDetails, loading } = useFetchUserDetails();
 
     if (loading) {
         return <div>Loading...</div>;
@@ -38,8 +17,10 @@ const AccountPage = () => {
         <div className="ft__login__container">
             <UserNavbar />
             <div>
-                <h2>Person Details</h2>
-                <pre>{JSON.stringify(personDetails, null, 2)}</pre>
+                <h2>Account</h2>
+                <div>User ID: {personDetails.id}</div>
+                <div>Name: {personDetails.firstName} {personDetails.lastName}</div>
+                <div>Email: {personDetails.email}</div>
             </div>
         </div>
     );

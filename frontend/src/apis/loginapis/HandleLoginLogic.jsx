@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import {useUserId} from "../../AppRouter";
 
-const LoginButtonLogic = ({ email, password }) => {
+const HandleLoginLogic = ({ email, password, setErrorResponse }) => {
     const navigate = useNavigate();
     const { updateUserId } = useUserId();
 
@@ -22,6 +22,7 @@ const LoginButtonLogic = ({ email, password }) => {
                 navigate('/dashboard');
             } else if (response.status === 401) {
                 console.log("Invalid credentials");
+                setErrorResponse("Incorrect email or password")
             } else {
                 console.log("Internal error")
             }
@@ -37,4 +38,4 @@ const LoginButtonLogic = ({ email, password }) => {
     );
 };
 
-export default LoginButtonLogic;
+export default HandleLoginLogic;

@@ -75,4 +75,15 @@ public class HealthStatisticController {
         healthStatisticService.deleteHealthStatistic(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/person/{personId}")
+    @Operation(summary = "Get the statistics by person ID", description = "Returns all the statistics based on a person's ID",
+            tags = {"stats", "get"})
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", content = { @Content(schema = @Schema(implementation = HealthStatistic.class), mediaType = "application/json") }, description = "Successfully retrieved"),
+            @ApiResponse(responseCode = "404", description = "Not Found", content = { @Content(schema = @Schema()) })
+    })
+    public List<HealthStatistic>  findAllStatisticsByPersonId(@PathVariable Long personId) {
+        return healthStatisticService.findByPersonId(personId);
+    }
 }

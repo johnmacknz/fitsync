@@ -53,4 +53,8 @@ public class HealthStatisticService {
     public boolean existsByPersonId(Long personId) {
         return healthStatisticRepository.existsByPersonId(personId);
     }
+
+    public List<HealthStatistic> findByPersonId(Long personId) {
+        return healthStatisticRepository.findByPersonId(personId);
+    }
 }

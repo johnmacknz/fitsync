@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import './MealList.css';
 import UserNavbar from "../../components/usernavbar/UserNavbar";
 import MealTab from "../../containers/mealTab/MealTab";

@@ -159,21 +159,31 @@ const ExerciseListInput = () => {
                 {filteredExercises.map(exercise => (
                     <tr key={exercise.id}>
                         {visibleColumns.map(column => (
-                            <td key={column}>{exercise[column]}</td>
+                            <td key={column}>
+                                {column === 'startTime' || column === 'endTime'
+                                    ? new Date(exercise[column]).toLocaleString('en-US', {
+                                        year: 'numeric',
+                                        month: '2-digit',
+                                        day: '2-digit',
+                                        hour: '2-digit',
+                                        minute: '2-digit',
+                                    })
+                                    : exercise[column]}
+                            </td>
                         ))}
                     </tr>
                 ))}
                 </tbody>
             </table>
 
-            <form onSubmit={handleAddExercise}>
-                {/* Display specific form fields based on the selected exercise type */}
-                {selectedExerciseType && (
-                    <>
-                        <div className="form-group">
-                            <label>Exercise Name:</label>
-                            <input type="text" name="exerciseName" value={exercise.exerciseName}
-                                   onChange={handleChange}/>
+                <form onSubmit={handleAddExercise}>
+                    {/* Display specific form fields based on the selected exercise type */}
+                    {selectedExerciseType && (
+                        <>
+                            <div className="form-group">
+                                <label>Exercise Name:</label>
+                                <input type="text" name="exerciseName" value={exercise.exerciseName}
+                                       onChange={handleChange}/>
                         </div>
 
                         <div className="form-group">

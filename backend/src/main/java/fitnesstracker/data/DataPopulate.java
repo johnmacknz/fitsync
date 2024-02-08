@@ -265,24 +265,24 @@ public class DataPopulate {
 
 
        //Person1 exercises
-        Exercise exercise1Person1 = new WeightLiftingExercise(person1.getId(), "Squats", LocalDateTime.of(2023, 12, 1, 10, 0), LocalDateTime.of(2023, 12, 1, 10, 30), 200, 3, 10, 30, "Legs");
+        Exercise exercise1Person1 = new WeightLiftingExercise(person1.getId(), "Squats", LocalDateTime.of(2023, 12, 1, 10, 0), LocalDateTime.of(2023, 12, 1, 11, 30), 200, 3, 10, 30, "Legs");
         exercise1Person1.setEquipmentRequired("Barbell and free weights");
         exercise1Person1.setDescription("Maintain proper form throughout");
         exerciseHistoryService.addExercise(exercise1Person1);
 
-        Exercise exercise2Person1 = new DistanceCardioExercise(person1.getId(), "Running", LocalDateTime.of(2023, 12, 2, 8, 0), LocalDateTime.of(2023, 12, 2, 8, 45), 400, 12.5);
+        Exercise exercise2Person1 = new DistanceCardioExercise(person1.getId(), "Running", LocalDateTime.of(2023, 12, 2, 8, 0), LocalDateTime.of(2023, 12, 2, 9, 45), 400, 12.5);
         exercise2Person1.setDescription("Scenic route through the park");
         exerciseHistoryService.addExercise(exercise2Person1);
 
-        Exercise exercise3Person1 = new IsometricExercise(person1.getId(), "Plank", LocalDateTime.of(2023, 12, 3, 15, 0), LocalDateTime.of(2023, 12, 3, 15, 5), 60, "Core");
+        Exercise exercise3Person1 = new IsometricExercise(person1.getId(), "Plank", LocalDateTime.of(2023, 12, 3, 15, 0), LocalDateTime.of(2023, 12, 3, 16, 5), 60, "Core");
         exercise3Person1.setDescription("Challenge yourself, hold it for a minute");
         exerciseHistoryService.addExercise(exercise3Person1);
 
-        Exercise exercise4Person1 = new NoDistanceCardioExercise(person1.getId(), "Jumping Jacks", LocalDateTime.of(2023, 12, 4, 9, 0), LocalDateTime.of(2023, 12, 4, 9, 10), 250);
+        Exercise exercise4Person1 = new NoDistanceCardioExercise(person1.getId(), "Jumping Jacks", LocalDateTime.of(2023, 12, 4, 9, 0), LocalDateTime.of(2023, 12, 4, 11, 10), 250);
         exercise4Person1.setDescription("Elevate your heart rate");
         exerciseHistoryService.addExercise(exercise4Person1);
 
-        Exercise exercise5Person1 = new BodyweightExercise(person2.getId(), "Push-ups", LocalDateTime.of(2023, 12, 18, 14, 0), LocalDateTime.of(2023, 12, 18, 14, 5), 150, 3, 10, "Chest");
+        Exercise exercise5Person1 = new BodyweightExercise(person2.getId(), "Push-ups", LocalDateTime.of(2023, 12, 18, 14, 0), LocalDateTime.of(2023, 12, 18, 15, 5), 150, 3, 10, "Chest");
         exercise5Person1.setDescription("Focus on controlled movements");
         exerciseHistoryService.addExercise(exercise5Person1);
 
@@ -295,29 +295,29 @@ public class DataPopulate {
         exercise7Person1.setDescription("Explore different bike trails");
         exerciseHistoryService.addExercise(exercise7Person1);
 
-        Exercise exercise8Person1 = new IsometricExercise(person1.getId(), "Side Plank", LocalDateTime.of(2023, 12, 8, 14, 0), LocalDateTime.of(2023, 12, 8, 14, 3), 45, "Core");
+        Exercise exercise8Person1 = new IsometricExercise(person1.getId(), "Side Plank", LocalDateTime.of(2023, 12, 8, 14, 0), LocalDateTime.of(2023, 12, 8, 15, 3), 45, "Core");
         exercise8Person1.setDescription("Engage your core and maintain a straight line");
         exerciseHistoryService.addExercise(exercise8Person1);
 
-        Exercise exercise9Person1 = new BodyweightExercise(person1.getId(), "Lunges", LocalDateTime.of(2023, 12, 9, 11, 0), LocalDateTime.of(2023, 12, 9, 11, 15), 50, 3, 12, "Legs");
+        Exercise exercise9Person1 = new BodyweightExercise(person1.getId(), "Lunges", LocalDateTime.of(2023, 12, 9, 11, 0), LocalDateTime.of(2023, 12, 9, 12, 15), 50, 3, 12, "Legs");
         exercise9Person1.setDescription("Focus on balance and controlled movements");
         exerciseHistoryService.addExercise(exercise9Person1);
 
-        Exercise exercise10Person1 = new NoDistanceCardioExercise(person1.getId(), "High Knees", LocalDateTime.of(2023, 12, 10, 10, 0), LocalDateTime.of(2023, 12, 10, 10, 10), 150);
+        Exercise exercise10Person1 = new NoDistanceCardioExercise(person1.getId(), "High Knees", LocalDateTime.of(2023, 12, 10, 10, 0), LocalDateTime.of(2023, 12, 11, 10, 10), 150);
         exercise10Person1.setDescription("Elevate your heart rate with high-intensity cardio");
         exerciseHistoryService.addExercise(exercise10Person1);
 
         Exercise exercise11Person1 = new WeightLiftingExercise(person1.getId(), "Squats", LocalDateTime.of(2023, 11, 1, 10, 0), LocalDateTime.of(2023, 11, 1, 11, 30), 210, 3, 10, 30, "Legs");
         exercise11Person1.setEquipmentRequired("Barbell and free weights");
-        exercise11Person1.setDescription("Maintain proper form throughout");
+        exercise11Person1.setDescription("Ask for spot in heavy weights");
         exerciseHistoryService.addExercise(exercise11Person1);
 
-        Exercise exercise12Person1 = new WeightLiftingExercise(person1.getId(), "Squats", LocalDateTime.of(2023, 12, 23, 10, 0), LocalDateTime.of(2023, 12, 23, 10, 30), 250, 3, 10, 60, "Legs");
+        Exercise exercise12Person1 = new WeightLiftingExercise(person1.getId(), "Squats", LocalDateTime.of(2023, 12, 23, 10, 0), LocalDateTime.of(2023, 12, 23, 12, 30), 250, 3, 10, 60, "Legs");
         exercise12Person1.setEquipmentRequired("Barbell and free weights");
-        exercise12Person1.setDescription("Maintain proper form throughout");
+        exercise12Person1.setDescription("Watch your knees");
         exerciseHistoryService.addExercise(exercise12Person1);
 
-        Exercise exercise13Person1 = new WeightLiftingExercise(person1.getId(), "Bench Press", LocalDateTime.of(2023, 12, 24, 10, 0), LocalDateTime.of(2023, 12, 24, 11, 30), 250, 3, 10, 60, "Chest");
+        Exercise exercise13Person1 = new WeightLiftingExercise(person1.getId(), "Bench Press", LocalDateTime.of(2023, 12, 24, 10, 0), LocalDateTime.of(2023, 12, 24, 12, 30), 250, 3, 10, 60, "Chest");
         exercise13Person1.setEquipmentRequired("Barbell and free weights");
         exercise13Person1.setDescription("Maintain proper form throughout");
         exerciseHistoryService.addExercise(exercise13Person1);
@@ -327,20 +327,20 @@ public class DataPopulate {
         exercise14Person1.setDescription("Maintain proper form throughout");
         exerciseHistoryService.addExercise(exercise14Person1);
 
-        Exercise exercise15Person1 = new WeightLiftingExercise(person1.getId(), "Bench Press", LocalDateTime.of(2024, 1, 27, 10, 0), LocalDateTime.of(2024, 1, 27, 11, 30), 200, 3, 10, 60, "Chest");
+        Exercise exercise15Person1 = new WeightLiftingExercise(person1.getId(), "Bench Press", LocalDateTime.of(2024, 1, 27, 10, 0), LocalDateTime.of(2024, 1, 27, 11, 30), 200, 3, 10, 80, "Chest");
         exercise15Person1.setEquipmentRequired("Barbell and free weights");
-        exercise15Person1.setDescription("Maintain proper form throughout");
+        exercise15Person1.setDescription("Watch your shoulders");
         exerciseHistoryService.addExercise(exercise15Person1);
 
-        Exercise exercise16Person1 = new DistanceCardioExercise(person1.getId(), "Running", LocalDateTime.of(2024, 2, 5, 7, 0), LocalDateTime.of(2024, 2, 5, 7, 45), 350, 10.0);
+        Exercise exercise16Person1 = new DistanceCardioExercise(person1.getId(), "Running", LocalDateTime.of(2024, 2, 5, 7, 0), LocalDateTime.of(2024, 2, 5, 8, 45), 350, 10.0);
         exercise16Person1.setDescription("Change your pace throughout the run");
         exerciseHistoryService.addExercise(exercise16Person1);
 
-        Exercise exercise17Person1 = new IsometricExercise(person1.getId(), "Plank", LocalDateTime.of(2024, 2, 6, 16, 0), LocalDateTime.of(2024, 2, 6, 16, 5), 75, "Core");
+        Exercise exercise17Person1 = new IsometricExercise(person1.getId(), "Plank", LocalDateTime.of(2024, 2, 6, 16, 0), LocalDateTime.of(2024, 2, 6, 17, 5), 75, "Core");
         exercise17Person1.setDescription("Focus on breathing and core engagement");
         exerciseHistoryService.addExercise(exercise17Person1);
 
-        Exercise exercise18Person1 = new BodyweightExercise(person1.getId(), "Push-ups", LocalDateTime.of(2024, 2, 7, 13, 0), LocalDateTime.of(2024, 2, 7, 13, 5), 120, 3, 15, "Chest");
+        Exercise exercise18Person1 = new BodyweightExercise(person1.getId(), "Push-ups", LocalDateTime.of(2024, 2, 7, 13, 0), LocalDateTime.of(2024, 2, 7, 14, 5), 120, 3, 15, "Chest");
         exercise18Person1.setDescription("Maintain a straight body position");
         exerciseHistoryService.addExercise(exercise18Person1);
 
@@ -348,11 +348,11 @@ public class DataPopulate {
         exercise19Person1.setDescription("Find a challenging route with hills");
         exerciseHistoryService.addExercise(exercise19Person1);
 
-        Exercise exercise20Person1 = new IsometricExercise(person1.getId(), "Side Plank", LocalDateTime.of(2024, 2, 11, 14, 0), LocalDateTime.of(2024, 2, 11, 14, 3), 60, "Core");
+        Exercise exercise20Person1 = new IsometricExercise(person1.getId(), "Side Plank", LocalDateTime.of(2024, 2, 11, 14, 0), LocalDateTime.of(2024, 2, 11, 15, 3), 60, "Core");
         exercise20Person1.setDescription("Focus on stability and controlled breathing");
         exerciseHistoryService.addExercise(exercise20Person1);
 
-        Exercise exercise21Person1 = new BodyweightExercise(person1.getId(), "Lunges", LocalDateTime.of(2024, 2, 12, 10, 0), LocalDateTime.of(2024, 2, 12, 10, 15), 60, 3, 15, "Legs");
+        Exercise exercise21Person1 = new BodyweightExercise(person1.getId(), "Lunges", LocalDateTime.of(2024, 2, 12, 10, 0), LocalDateTime.of(2024, 2, 12, 11, 15), 60, 3, 15, "Legs");
         exercise21Person1.setDescription("Step forward with purpose and control");
         exerciseHistoryService.addExercise(exercise21Person1);
 
@@ -360,13 +360,48 @@ public class DataPopulate {
         exercise22Person1.setDescription("Focus on steady pacing throughout");
         exerciseHistoryService.addExercise(exercise22Person1);
 
-        Exercise exercise23Person1 = new IsometricExercise(person1.getId(), "Plank", LocalDateTime.of(2024, 2, 16, 17, 0), LocalDateTime.of(2024, 2, 16, 17, 5), 90, "Core");
+        Exercise exercise23Person1 = new IsometricExercise(person1.getId(), "Plank", LocalDateTime.of(2024, 2, 16, 17, 0), LocalDateTime.of(2024, 2, 16, 18, 5), 90, "Core");
         exercise23Person1.setDescription("Challenge yourself with extended duration");
         exerciseHistoryService.addExercise(exercise23Person1);
 
-        Exercise exercise24Person1 = new BodyweightExercise(person1.getId(), "Push-ups", LocalDateTime.of(2024, 2, 17, 12, 0), LocalDateTime.of(2024, 2, 17, 12, 5), 180, 4, 12, "Chest");
+        Exercise exercise24Person1 = new BodyweightExercise(person1.getId(), "Push-ups", LocalDateTime.of(2024, 2, 17, 12, 0), LocalDateTime.of(2024, 2, 17, 13, 5), 180, 4, 12, "Chest");
         exercise24Person1.setDescription("Add an explosive push at the top");
         exerciseHistoryService.addExercise(exercise24Person1);
+
+        Exercise exercise25Person1 = new WeightLiftingExercise(person1.getId(), "Deadlift", LocalDateTime.of(2024, 3, 20, 9, 0), LocalDateTime.of(2024, 3, 20, 10, 0), 250, 3, 8, 90, "Back");
+        exercise25Person1.setEquipmentRequired("Barbell and plates");
+        exercise25Person1.setDescription("Keep your back straight and lift with your legs");
+        exerciseHistoryService.addExercise(exercise25Person1);
+
+        Exercise exercise26Person1 = new WeightLiftingExercise(person1.getId(), "Squat", LocalDateTime.of(2024, 3, 22, 11, 0), LocalDateTime.of(2024, 3, 22, 12, 0), 180, 4, 10, 60, "Legs");
+        exercise26Person1.setEquipmentRequired("Barbell and squat rack");
+        exercise26Person1.setDescription("Maintain a controlled descent and powerful ascent");
+        exerciseHistoryService.addExercise(exercise26Person1);
+
+        Exercise exercise27Person1 = new DistanceCardioExercise(person1.getId(), "Swimming", LocalDateTime.of(2024, 3, 25, 8, 0), LocalDateTime.of(2024, 3, 25, 9, 0), 500, 20.0);
+        exercise27Person1.setDescription("Focus on proper breathing technique in the water");
+        exerciseHistoryService.addExercise(exercise27Person1);
+
+        Exercise exercise28Person1 = new DistanceCardioExercise(person1.getId(), "Rowing", LocalDateTime.of(2024, 3, 28, 14, 0), LocalDateTime.of(2024, 3, 28, 15, 0), 400, 15.0);
+        exercise28Person1.setDescription("Maintain a consistent and strong rowing rhythm");
+        exerciseHistoryService.addExercise(exercise28Person1);
+
+        Exercise exercise29Person1 = new IsometricExercise(person1.getId(), "Russian Twists", LocalDateTime.of(2024, 3, 8, 18, 0), LocalDateTime.of(2024, 3, 8, 19, 15), 60, "Core");
+        exercise29Person1.setDescription("Rotate your torso with control and engage the obliques");
+        exerciseHistoryService.addExercise(exercise5Person1);
+
+        Exercise exercise30Person1 = new IsometricExercise(person1.getId(), "Hollow Body Hold", LocalDateTime.of(2024, 3, 12, 10, 0), LocalDateTime.of(2024, 3, 12, 12, 5), 90, "Core");
+        exercise30Person1.setDescription("Keep your lower back pressed into the floor during the hold");
+        exerciseHistoryService.addExercise(exercise30Person1);
+
+        Exercise exercise31Person1 = new BodyweightExercise(person1.getId(), "Push-ups", LocalDateTime.of(2024, 3, 7, 13, 0), LocalDateTime.of(2024, 3, 7, 14, 5), 120, 3, 15, "Chest");
+        exercise31Person1.setDescription("Maintain a straight body position");
+        exerciseHistoryService.addExercise(exercise31Person1);
+
+        Exercise exercise32Person1 = new BodyweightExercise(person1.getId(), "Lunges", LocalDateTime.of(2024, 3, 12, 10, 0), LocalDateTime.of(2024, 3, 12, 11, 15), 60, 3, 15, "Legs");
+        exercise32Person1.setDescription("Step forward with purpose and control");
+        exerciseHistoryService.addExercise(exercise32Person1);
+
 
 
         //Person2 exercises

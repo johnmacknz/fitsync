@@ -58,9 +58,8 @@ public class HealthStatistic {
     public HealthStatistic() {
     }
 
-    public HealthStatistic(LocalDate healthDate, double sleep, double weight, double bloodPressure, double hydration, int calorieIn, double calorieOut, double heartRate, double stress, Long personId) {
+    public HealthStatistic(LocalDate healthDate, double sleep, double weight, double bloodPressure, double hydration, int calorieIn, int calorieOut, double heartRate, double stress, Long personId) {
         this.healthDate = healthDate != null ? healthDate : LocalDate.now();
-
         this.sleep = sleep;
         this.weight = weight;
         this.bloodPressure = bloodPressure;

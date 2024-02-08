@@ -8,9 +8,8 @@
 }
 
 .chart {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /*display: flex;*/
+    /*flex-direction: column;*/
 }
 
 .ft__dashboard_linechart legend {

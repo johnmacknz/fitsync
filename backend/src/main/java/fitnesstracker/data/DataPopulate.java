@@ -15,8 +15,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.time.temporal.ChronoUnit;
 import java.util.Random;
 
 @Component
@@ -454,24 +456,29 @@ public class DataPopulate {
         exerciseHistoryService.addExercise(exercise10Person11);
 
         //*******************************************************************************
+        LocalDate startDate =  LocalDate.of(2023,1,1);
+        LocalDate endDate = LocalDate.now(); // Use the current date as the end date
+
         for (Person person : Arrays.asList(person1, person2, person3, person4, person5)) {
             for (int i = 0; i < 50; i++) {
-                int randomWeight = getRandomIntInRange(20, 30);
+                int randomSleep = getRandomIntInRange(60, 80);
+                int randomWeight = getRandomIntInRange(50, 100);
                 int randomBloodPressure = getRandomIntInRange(60, 90);
                 int randomHydration = getRandomIntInRange(70, 100);
                 int randomCalorieIn = getRandomIntInRange(1500, 3000);
                 int randomCalorieOut = getRandomIntInRange(1000, 2500);
                 int randomHeartRate = getRandomIntInRange(60, 100);
                 int randomStress = getRandomIntInRange(0, 20);
+                LocalDate randomDate = getRandomDateInRange(startDate, endDate);
 
                 HealthStatistic healthStatistic = new HealthStatistic(
-                        null,
+                        randomDate,
+                        randomSleep,
                         randomWeight,
                         randomBloodPressure,
                         randomHydration,
                         randomCalorieIn,
-                        0,
-                        0,
+                        randomCalorieOut,
                         randomHeartRate,
                         randomStress,
                         person.getId()
@@ -482,14 +489,23 @@ public class DataPopulate {
         }
     }
     //*******************************************************************************************
-    // Helper method to get a random integer in a specified range
+
+    public static LocalDate getRandomDateInRange(LocalDate startDate, LocalDate endDate) {
+        Random random = new Random();
+
+        // Calculate the number of days between start and end dates
+        long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
+
+        // Generate a random number of days to add to the start date
+        long randomDays = random.nextInt((int) daysBetween + 1);
+
+        // Add the random number of days to the start date to get a random date
+        return startDate.plusDays(randomDays);
+    }
+
     private int getRandomIntInRange(int min, int max) {
         Random random = new Random();
         return random.nextInt(max - min + 1) + min;
-    }
-    private static double getRandomDoubleInRange ( double min, double max){
-        Random r = new Random();
-        return min + (max - min) * r.nextDouble();
     }
 
     private void saveMeal(String @NotNull [] mealIngredientNames, Meal meal) {

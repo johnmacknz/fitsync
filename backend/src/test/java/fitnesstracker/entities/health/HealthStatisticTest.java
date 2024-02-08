@@ -9,7 +9,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -77,7 +76,7 @@ class HealthStatisticTest {
         double bloodPressure = 120.0;
         double hydration = 60.0;
         int calorieIn = 800;
-        double calorieOut = 300;
+        int calorieOut = 300;
         double heartRate = 75.0;
         double stress = 5.0;
         Long personId = 1L;
@@ -91,8 +90,8 @@ class HealthStatisticTest {
         assertEquals(weight, healthStatistic.getWeight());
         assertEquals(bloodPressure, healthStatistic.getBloodPressure());
         assertEquals(hydration, healthStatistic.getHydration());
-        assertEquals(0, healthStatistic.getCalorieIn());
-        assertEquals(0, healthStatistic.getCalorieOut());
+        assertEquals(800, healthStatistic.getCalorieIn());
+        assertEquals(300, healthStatistic.getCalorieOut());
         assertEquals(heartRate, healthStatistic.getHeartRate());
         assertEquals(stress, healthStatistic.getStress());
         assertEquals(personId, healthStatistic.getPersonId());

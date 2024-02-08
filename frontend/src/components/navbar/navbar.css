@@ -71,6 +71,17 @@
     font-size: 18px;
 }
 
+.text-error {
+    margin-bottom: 10px;
+    margin-right: 20px;
+    color: #50da2a;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+
+}
+
 .ft__navbar-menu {
     margin-left: 1rem;
     display: none;

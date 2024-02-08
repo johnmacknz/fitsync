@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SignUpButtonLogic from "./SignUpButtonLogic";
+import HandleSignUpLogic from "../../apis/signupapis/HandleSignUpLogic";
 
 const SignUpInput = () => {
 
@@ -8,6 +8,7 @@ const SignUpInput = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [reEnterPassword, setReEnterPassword] = useState('');
+    const [errorResponse, setErrorResponse] = useState('')
 
     return (
         <div >
@@ -22,7 +23,7 @@ const SignUpInput = () => {
                         />
                         <div className="underline"></div>
                     </div>
-                    <br />
+                    <br/>
                     <div className="ft__login__input">
                         <input
                             type="lastName"
@@ -32,7 +33,7 @@ const SignUpInput = () => {
                         />
                         <div className="underline"></div>
                     </div>
-                    <br />
+                    <br/>
                     <div className="ft__login__input">
                         <input
                             type="email"
@@ -42,7 +43,7 @@ const SignUpInput = () => {
                         />
                         <div className="underline"></div>
                     </div>
-                    <br />
+                    <br/>
                     <div className="ft__login__input">
                         <input
                             type="password"
@@ -52,7 +53,7 @@ const SignUpInput = () => {
                         />
                         <div className="underline"></div>
                     </div>
-                    <br />
+                    <br/>
                     <div className="ft__login__input">
                         <input
                             type="reEnterPassword"
@@ -62,7 +63,7 @@ const SignUpInput = () => {
                         />
                         <div className="underline"></div>
                     </div>
-                    <br />
+                    <br/>
                     <div className="ft__login__options">
                         <div className="ft__login__remember">
                             <input
@@ -71,7 +72,17 @@ const SignUpInput = () => {
                             />
                             <label>Remember me</label>
                         </div>
-                        <SignUpButtonLogic firstName={firstName} lastName={lastName} email={email} password={password} reEnterPassword={reEnterPassword} />
+                        <HandleSignUpLogic
+                            firstName={firstName}
+                            lastName={lastName}
+                            email={email}
+                            password={password}
+                            reEnterPassword={reEnterPassword}
+                            setErrorResponse={setErrorResponse}
+                        />
+                    </div>
+                    <div className="ft__login__error">
+                        {errorResponse}
                     </div>
                 </form>
             </div>

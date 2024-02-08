@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {useUserId} from "../../AppRouter";
 
-const SignUpButtonLogic = ({ firstName, lastName, email, password, reEnterPassword }) => {
+const HandleSignUpLogic = ({ firstName, lastName, email, password, reEnterPassword, setErrorResponse }) => {
 
     const navigate = useNavigate();
     const { updateUserId } = useUserId();
@@ -25,6 +25,7 @@ const SignUpButtonLogic = ({ firstName, lastName, email, password, reEnterPasswo
             } else if (response.status === 401) {
                 const responseMsg = await response.text();
                 console.log(responseMsg);
+                setErrorResponse(responseMsg);
             } else {
                 console.log("Internal error")
             }
@@ -40,4 +41,4 @@ const SignUpButtonLogic = ({ firstName, lastName, email, password, reEnterPasswo
     );
 }
 
-export default SignUpButtonLogic;
+export default HandleSignUpLogic;

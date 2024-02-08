@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import LoginButtonLogic from "./LoginButtonLogic";
+import HandleLoginLogic from "../../apis/loginapis/HandleLoginLogic";
 
 const LoginInput = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errorResponse, setErrorResponse] = useState('')
 
     return (
         <div>
@@ -18,7 +19,7 @@ const LoginInput = () => {
                         />
                         <div className="underline"></div>
                     </div>
-                    <br />
+                    <br/>
                     <div className="ft__login__input">
                         <input
                             type="password"
@@ -28,13 +29,16 @@ const LoginInput = () => {
                         />
                         <div className="underline"></div>
                     </div>
-                    <br />
+                    <br/>
                     <div className="ft__login__options">
                         <div className="ft__login__remember">
-                            <input type="checkbox" name="lsRememberMe" />
+                            <input type="checkbox" name="lsRememberMe"/>
                             <label>Remember me</label>
                         </div>
-                        <LoginButtonLogic email={email} password={password} />
+                        <HandleLoginLogic email={email} password={password} setErrorResponse={setErrorResponse}/>
+                    </div>
+                    <div className="ft__login__error">
+                        {errorResponse}
                     </div>
                 </form>
             </div>

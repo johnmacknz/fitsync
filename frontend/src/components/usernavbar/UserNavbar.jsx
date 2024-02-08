@@ -30,7 +30,7 @@ const UserNavbar = () => {
                 <button type="button">Account</button>
                 </Link>
                 <div className="text">
-                    <> User Name: {userId}</>
+                    <> User ID : {userId}</>
                 </div>
             </div>
         </div>

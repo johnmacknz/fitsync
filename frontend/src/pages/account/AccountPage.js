@@ -16,7 +16,7 @@ const AccountPage = () => {
     return (
         <div className="ft__login__container">
             <UserNavbar />
-            <div>
+            <div className="text">
                 <h2>Account</h2>
                 <div>User ID: {personDetails.id}</div>
                 <div>Name: {personDetails.firstName} {personDetails.lastName}</div>

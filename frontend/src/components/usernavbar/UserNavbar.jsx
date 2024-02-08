@@ -1,13 +1,15 @@
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import logo from '../../assets/fitsync-high-resolution-logo-transparent.png';
+import {useUserId} from "../../AppRouter";
 
 const UserNavbar = () => {
+    const {userId} = useUserId();
 
     return (
         <div className="ft__navbar">
             <div className="ft__navbar-links">
                 <div className="ft__navbar-links_logo">
-                    <img src={logo} alt="FitSync Logo" />
+                    <img src={logo} alt="FitSync Logo"/>
                 </div>
                 <div className="ft__navbar-links_container">
                     <Link to="/dashboard">Dashboard</Link>
@@ -21,6 +23,9 @@ const UserNavbar = () => {
                 <Link to="/account">
                     <button type="button">Account</button>
                 </Link>
+                <div className="text">
+                    <> User Name: {userId}</>
+                </div>
             </div>
         </div>
     );

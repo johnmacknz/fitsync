@@ -2,8 +2,10 @@ import {Link} from 'react-router-dom';
 import logo from '../../assets/fitsync-high-resolution-logo-transparent.png';
 import {useUserId} from "../../AppRouter";
 
+
 const UserNavbar = () => {
     const {userId} = useUserId();
+
 
     return (
         <div className="ft__navbar">
@@ -19,9 +21,13 @@ const UserNavbar = () => {
                     <Link to="/pb">Personal Bests</Link>
                 </div>
             </div>
+
             <div className="ft__navbar-sign">
+                <Link to="/login">
+                    <button type="button">Log Out</button>
+                </Link>
                 <Link to="/account">
-                    <button type="button">Account</button>
+                <button type="button">Account</button>
                 </Link>
                 <div className="text">
                     <> User Name: {userId}</>

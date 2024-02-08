@@ -24,6 +24,20 @@ const ExerciseListInput = () => {
     const [visibleColumns, setVisibleColumns] = useState([]);
     const { userId } = useUserId();
 
+    const columnDisplayNameMap = {
+        exerciseName: 'Exercise Name',
+        exerciseType: 'Exercise Type',
+        targetMuscle: 'Target Muscle',
+        equipmentRequired: 'Equipment Required',
+        startTime: 'Start Date',
+        endTime: 'End Date',
+        caloriesBurned: 'Calories Burned',
+        sets: 'Sets',
+        reps: 'Reps',
+        distanceInKm: 'Distance (km)',
+        weightInKg: 'Weight (kg)',
+        description: 'Description'
+    };
 
     useEffect(() => {
         // Fetch existing exercises
@@ -50,15 +64,6 @@ const ExerciseListInput = () => {
             exerciseType: selectedExerciseType,
             personId: userId,
         };
-
-        const invalidFields = ['targetMuscle', 'exerciseName', 'equipmentRequired', 'caloriesBurned']
-            .filter(field => !isNaN(exerciseWithType[field]));
-
-        if (invalidFields.length > 0) {
-            // Display an alert for invalid input
-            window.alert(`Invalid input for ${invalidFields.join(', ')}. Please enter non-numeric values.`);
-            return;
-        }
 
         // Perform the POST request to add the new exercise
         fetch('http://localhost:8080/exercises', {
@@ -116,7 +121,10 @@ const ExerciseListInput = () => {
                 break;
             default:
                 setVisibleColumns([]);
+
+                return;
         }
+
     };
 
     return (
@@ -141,7 +149,7 @@ const ExerciseListInput = () => {
                 <thead>
                 <tr>
                     {visibleColumns.map(column => (
-                        <th key={column}>{column}</th>
+                        <th key={column}>{columnDisplayNameMap[column]}</th>
                     ))}
                 </tr>
                 </thead>
@@ -254,7 +262,7 @@ const ExerciseListInput = () => {
                             </div>
                         )}
 
-                        {selectedExerciseType === 'No Distance Cardio Exercise'}
+                        {/* No extra fields for 'No Distance Cardio Exercise' */}
 
                         <div className="form-group">
                             <label>Description:</label>

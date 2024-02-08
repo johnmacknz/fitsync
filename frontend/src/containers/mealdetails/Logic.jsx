@@ -1,7 +1,8 @@
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./logic.css"
+import axios from "axios";
 
 const Logic = () => {
     const { mealId } = useParams();

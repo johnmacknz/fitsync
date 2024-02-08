@@ -59,10 +59,18 @@ const HealthStatisticList = () => {
 
     return (
         <div className="ft__login__container">
-            <UserNavbar/>
+            <UserNavbar />
+            <div className="ft__health_container">
             <h2 className="form-header">Health Statistics</h2>
-            <form className="tabs-container">
-                {/*<AdminDerivation adminFlag={adminFlag} newData={newData} setNewData={setNewData}></AdminDerivation>*/}
+            <form className="ft__health_tabs">
+                {/*<label className="form-label">*/}
+                {/*    Person ID:*/}
+                {/*    <input className="value-input"*/}
+                {/*           type="number"*/}
+                {/*           value={newData.personId}*/}
+                {/*           onChange={(e) => setNewData({ ...newData, personId: e.target.value })}*/}
+                {/*    />*/}
+                {/*</label >*/}
                 <label className="form-label">
                     Sleep:
                     <input className="value-input"
@@ -165,6 +173,7 @@ const HealthStatisticList = () => {
                 ))}
                 </tbody>
             </table>
+            </div>
         </div>
     );
 };

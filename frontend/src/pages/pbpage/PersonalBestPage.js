@@ -33,7 +33,8 @@ const PersonalBestPage = () => {
             <UserNavbar />
             <PersonalBestTable
                 exerciseData={exerciseData}
-                openModal={openModal} />
+                openModal={openModal}
+                />
             <PersonalBestModal
                 modalVisible={modalVisible}
                 metric={metric}

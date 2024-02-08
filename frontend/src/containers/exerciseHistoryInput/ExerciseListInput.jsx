@@ -145,7 +145,7 @@ const ExerciseListInput = () => {
                 ))}
             </div>
 
-
+            <div className="ft__exercisehistory_container">
             <h2>Activities:</h2>
             <table>
                 <thead>
@@ -275,6 +275,7 @@ const ExerciseListInput = () => {
                     </>
                 )}
             </form>
+            </div>
         </div>
     );
 };

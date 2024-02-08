@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import UserNavbar from "../../components/usernavbar/UserNavbar";
 import {Bar, BarChart, Label, Legend, Line, LineChart, Rectangle, Tooltip, XAxis, YAxis} from 'recharts';
 import {useUserId} from "../../AppRouter";
+import "./dashboard.css"
+import moment from 'moment';
 
 const Dashboard = () => {
     const [healthStatistics, setHealthStatistics] = useState([]);
@@ -26,7 +28,7 @@ const Dashboard = () => {
 
     // Prepare data for the line chart
     const statsChartData = healthStatistics.map(statistic => ({
-        healthDate: statistic.healthDate,
+        healthDate: moment(statistic.healthDate).format('MMM/DD'),
         heartRate: statistic.heartRate,
         hydration: statistic.hydration,
         stress: statistic.stress,
@@ -41,55 +43,56 @@ const Dashboard = () => {
     }));
 
 
+
     return (
         <div className="ft__login__container">
             <UserNavbar/>
-            <div className="tabs-container">
+            <div className="ft__dashboard_container">
                 <div className="chart">
                     <h2 className="form-header">Heart Rate Graph</h2>
-                    <LineChart width={600} height={300} data={statsChartData}
-                               margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+                    <LineChart classname="ft__dashboard_linechart" width={600} height={300} data={statsChartData}
+                               margin={{top: 20, right: 30, left: 20, bottom: 10}}>
                         <Rectangle width="100%" height="100%" fill="#acf73e" stroke="#ccc" strokeWidth={1}/>
                         <XAxis dataKey="healthDate">
-                            <Label value="Date" position="insideBottom"/>
+                            <Label value="Date" position="insideBottom" offset={-5} />
                         </XAxis>
                         <YAxis>
-                            <Label value="Heart Rate(pulse)" angle={-90} position="insideLeft"/>
+                            <Label value="Heart Rate(pulse)" angle={-90} position="insideLeft" />
                         </YAxis>
-                        <Tooltip/>
-                        <Legend/>
-                        <Line type="monotone" dataKey="heartRate" stroke="#8884d8"/>
+                        <Tooltip />
+                        <Legend layout="vertical" verticalAlign="top" align="right"/>
+                        <Line type="monotone" dataKey="heartRate" stroke="#8884d8" />
                     </LineChart>
                 </div>
-                <div className="chart">>
+                <div className="chart">
                     <h2 className="form-header">Weight vs Calorie Burned</h2>
                     <LineChart width={600} height={300} data={excerciseChartData}
-                               margin={{top: 20, right: 30, left: 20, bottom: 5}}>
+                               margin={{top: 20, right: 30, left: 20, bottom: 10}}>
                         <Rectangle width="100%" height="100%" fill="#acf73e" stroke="#ccc" strokeWidth={1}/>
-                        <XAxis dataKey="weighInKg">
-                            <Label value="Weight in KG" position="insideBottom"/>
+                        <XAxis dataKey="weightInKg">
+                            <Label value="Weight in KG" position="insideBottom" offset={-5}/>
                         </XAxis>
                         <YAxis>
                             <Label value="Calories Burned" angle={-90} position="insideLeft"/>
                         </YAxis>
                         <Tooltip/>
-                        <Legend/>
+                        <Legend layout="vertical" verticalAlign="top" align="right"/>
                         <Line type="monotone" dataKey="caloriesBurned" stroke="#8884d8"/>
                     </LineChart>
                 </div>
                 <div className="chart">
-                    <h2 className="form-header">Distance covered in KM</h2>
+                    <h2 className="form-header">Distance (Km)</h2>
                     <BarChart width={600} height={300} data={excerciseChartData}
                               margin={{top: 20, right: 30, left: 20, bottom: 5}}>
                         <Rectangle width="100%" height="100%" fill="#acf73e" stroke="#ccc" strokeWidth={1}/>
                         <XAxis dataKey="id">
-                            <Label value="Records" position="insideBottom"/>
+                            <Label value="Records" position="insideBottom" offset={-5}/>
                         </XAxis>
                         <YAxis>
-                            <Label value="Distance in KM" angle={-90} position="insideLeft"/>
+                            <Label value="Distance in Km" angle={-90} position="insideLeft"/>
                         </YAxis>
                         <Tooltip/>
-                        <Legend/>
+                        <Legend layout="vertical" verticalAlign="top" align="right"/>
                         <Bar dataKey="distanceInKm" fill="#8884d8"/>
                     </BarChart>
                 </div>
@@ -99,13 +102,13 @@ const Dashboard = () => {
                                margin={{top: 20, right: 30, left: 20, bottom: 5}}>
                         <Rectangle width="100%" height="100%" fill="#acf73e" stroke="#ccc" strokeWidth={1}/>
                         <XAxis dataKey="healthDate">
-                            <Label value="Date" position="insideBottom"/>
+                            <Label value="Date" position="insideBottom" offset={-5}/>
                         </XAxis>
                         <YAxis>
                             <Label value="Hydration" angle={-90} position="insideLeft"/>
                         </YAxis>
                         <Tooltip/>
-                        <Legend/>
+                        <Legend layout="vertical" verticalAlign="top" align="right"/>
                         <Line type="monotone" dataKey="hydration" stroke="#8884d8"/>
                     </LineChart>
                 </div>
@@ -115,13 +118,13 @@ const Dashboard = () => {
                                margin={{top: 20, right: 30, left: 20, bottom: 5}}>
                         <Rectangle width="100%" height="100%" fill="#acf73e" stroke="#ccc" strokeWidth={1}/>
                         <XAxis dataKey="healthDate">
-                            <Label value="Date" position="insideBottom"/>
+                            <Label value="Date" position="insideBottom" offset={-5}/>
                         </XAxis>
                         <YAxis>
                             <Label value="Stress" angle={-90} position="insideLeft"/>
                         </YAxis>
                         <Tooltip/>
-                        <Legend/>
+                        <Legend layout="vertical" verticalAlign="top" align="right"/>
                         <Line type="monotone" dataKey="stress" stroke="#8884d8"/>
                     </LineChart>
                 </div>
@@ -131,13 +134,13 @@ const Dashboard = () => {
                                margin={{top: 20, right: 30, left: 20, bottom: 5}}>
                         <Rectangle width="100%" height="100%" fill="#acf73e" stroke="#ccc" strokeWidth={1}/>
                         <XAxis dataKey="healthDate">
-                            <Label value="Date" position="insideBottom"/>
+                            <Label value="Date" position="insideBottom" offset={-5}/>
                         </XAxis>
                         <YAxis>
                             <Label value="Blood Pressure" angle={-90} position="insideLeft"/>
                         </YAxis>
                         <Tooltip/>
-                        <Legend/>
+                        <Legend layout="vertical" verticalAlign="top" align="right"/>
                         <Line type="monotone" dataKey="bloodPressure" stroke="#8884d8"/>
                     </LineChart>
                 </div>

@@ -61,8 +61,9 @@ const HealthStatisticList = () => {
     return (
         <div className="ft__login__container">
             <UserNavbar />
+            <div className="ft__health_container">
             <h2 className="form-header">Health Statistics</h2>
-            <form className="tabs-container">
+            <form className="ft__health_tabs">
                 {/*<label className="form-label">*/}
                 {/*    Person ID:*/}
                 {/*    <input className="value-input"*/}
@@ -173,6 +174,7 @@ const HealthStatisticList = () => {
                 ))}
                 </tbody>
             </table>
+            </div>
         </div>
     );
 };

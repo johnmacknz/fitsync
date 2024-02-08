@@ -6,6 +6,33 @@
     flex-wrap: wrap; /* This allows items to wrap onto the next line if needed */
 }
 
+.ft__health_container {
+    margin-left: 90px;
+    margin-right: 90px;
+    font-family: var(--font-family);
+}
+
+.ft__health_tabs {
+    display: flex;
+    flex-direction: row;
+}
+
+.ft__health_tabs button {
+    padding: 0.5rem 1rem;
+    color: #090909;
+    background: #ff7700;
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
 .form-header {
     margin-bottom: 10px; /* Adjust as needed */
     margin-right: 20px; /* Adjust as needed */

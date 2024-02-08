@@ -68,9 +68,16 @@ public class DataPopulate {
         //*******************************************************************************
 
         //*******************************************************************************
-
-        String imagePath1 = "src/main/resources/chicken-stir-fry-1.jpg";
-        byte[] imageData1 = readImageDataFromFile(imagePath1);
+        byte[] imageData1 = readImageDataFromFile("src/main/resources/chicken-stir-fry-1.jpg");
+        byte[] imageData2 = readImageDataFromFile("src/main/resources/super-food-salmon-salad-hero.jpg");
+        byte[] imageData3 = readImageDataFromFile("src/main/resources/Spaghetti-with-Baked-Brie-Mushrooms-Spinach-dca7ad0b8a8f4156b78baf9debc988b3.jpg");
+        byte[] imageData4 = readImageDataFromFile("src/main/resources/Teriyaki-Beef-Vegetable-Stir-Fry.jpg");
+        byte[] imageData5 = readImageDataFromFile("src/main/resources/eod-grilled-chicken-tacos-6-2.jpg");
+        byte[] imageData6 = readImageDataFromFile("src/main/resources/GreekShrimpSkewers_Square-500x500.jpg");
+        byte[] imageData7 = readImageDataFromFile("src/main/resources/0323_2PV3_Furikake-Tofu154_SQ_Web.jpg");
+        byte[] imageData8 = readImageDataFromFile("src/main/resources/pork-stir-fry-recipe-4-e1686221047195.webp");
+        byte[] imageData9 = readImageDataFromFile("src/main/resources/lamb-chops-yogurt-2.webp");
+        byte[] imageData10 = readImageDataFromFile("src/main/resources/panko-crusted-cod.jpg");
 
         String[] meal1IngredientNames = {"500 grams chicken breast", "Assorted vegetables (bell peppers, broccoli, carrots)", "3 tablespoons Soy Sauce", "2 tablespoons Olive oil", "2 cloves Garlic (minced)", "1 teaspoon Ginger (minced)", "1 tablespoon Cornstarch", "1 tablespoon Water", "Salt and pepper to taste"};
 
@@ -99,7 +106,7 @@ public class DataPopulate {
                 400,
                 "Preheat your grill to medium-high heat. In a small bowl, whisk together the olive oil, lemon juice, Dijon mustard, honey, salt, and pepper to create the dressing. Brush both sides of the salmon fillets with the dressing. Grill the salmon for 4-5 minutes on each side, or until it flakes easily with a fork. Remove from the grill and let it cool slightly. Meanwhile, toss the assorted salad greens with the remaining dressing in a large bowl. Divide the dressed greens among serving plates and top each with a grilled salmon fillet. Garnish with lemon slices and serve immediately.",
                 person1.getId(),
-                imageData1,
+                imageData2,
                 "30 minutes",
                 "Beginner",
                 "2"
@@ -117,7 +124,7 @@ public class DataPopulate {
                 600,
                 "Bring a large pot of salted water to a boil. Cook the spaghetti according to the package instructions until al dente, then drain and set aside. In a separate skillet, heat the olive oil over medium heat. Add the minced garlic and sauté for 1-2 minutes until fragrant. Add the assorted vegetables to the skillet and cook for 4-5 minutes until they start to soften. Pour in the tomato sauce and Italian seasoning, then stir to combine. Let the sauce simmer for 5-7 minutes until heated through and slightly thickened. Add the cooked spaghetti to the skillet and toss to coat in the sauce. Sprinkle grated cheese over the top and stir until melted. Season with salt and pepper to taste. Serve hot with a sprinkle of fresh basil leaves, if desired.",
                 person1.getId(),
-                imageData1,
+                imageData3,
                 "30 minutes",
                 "Beginner",
                 "2"
@@ -136,7 +143,7 @@ public class DataPopulate {
                 700,
                 "In a small bowl, whisk together the teriyaki sauce, soy sauce, honey, minced garlic, and sesame seeds. Set aside. Heat a tablespoon of olive oil in a large skillet or wok over high heat. Add the sliced beef strips and stir-fry for 2-3 minutes until browned on all sides. Remove the beef from the skillet and set aside. In the same skillet, add another tablespoon of oil and toss in the sliced bell peppers, onions, and zucchini. Stir-fry for 3-4 minutes until the vegetables are tender yet crisp. Return the cooked beef to the skillet and pour the teriyaki sauce mixture over the top. Cook for an additional 1-2 minutes, stirring constantly, until the sauce thickens and coats the beef and vegetables. Serve hot over steamed rice and garnish with sliced green onions and sesame seeds.",
                 person1.getId(),
-                imageData1,
+                imageData4,
                 "40 minutes",
                 "Intermediate",
                 "4"
@@ -154,7 +161,7 @@ public class DataPopulate {
                 600,
                 "Preheat your grill to medium-high heat. In a small bowl, whisk together the Greek yogurt, lemon juice, minced garlic, paprika, cumin, cayenne pepper, salt, and pepper to create the marinade. Place the chicken thighs in a shallow dish and pour the marinade over them, making sure they are evenly coated. Cover and refrigerate for at least 30 minutes to marinate. Remove the chicken from the marinade and grill for 6-8 minutes on each side, or until cooked through and grill marks appear. Transfer the grilled chicken to a cutting board and let it rest for a few minutes before slicing. To assemble the tacos, warm the tortillas on the grill for 20-30 seconds on each side. Fill each tortilla with sliced grilled chicken, fresh salsa, avocado slices, and a dollop of cilantro-lime crema. Serve immediately with lime wedges on the side.",
                 person1.getId(),
-                imageData1,
+                imageData5,
                 "35 minutes",
                 "Intermediate",
                 "4"
@@ -172,7 +179,7 @@ public class DataPopulate {
                 450,
                 "Preheat your grill to medium heat. In a small bowl, whisk together the barbecue sauce, honey, lime juice, chili powder, garlic powder, and onion powder to create the marinade. Thread the peeled and deveined shrimp onto skewers, then brush them generously with the marinade. Grill the shrimp skewers for 2-3 minutes on each side, or until they are pink and opaque. Remove from the grill and sprinkle with chopped fresh parsley. Serve hot with extra barbecue sauce for dipping and lemon wedges on the side.",
                 person1.getId(),
-                imageData1,
+                imageData6,
                 "25 minutes",
                 "Beginner",
                 "2"
@@ -190,7 +197,7 @@ public class DataPopulate {
                 350,
                 "Preheat your oven to 400°F (200°C). Drain the firm tofu and pat it dry with paper towels. Cut the tofu into cubes and place them on a baking sheet lined with parchment paper. In a small bowl, whisk together the soy sauce, maple syrup, rice vinegar, minced garlic, and minced ginger to create the marinade. Pour the marinade over the tofu cubes, making sure they are evenly coated. Bake in the preheated oven for 25-30 minutes, flipping halfway through, until the tofu is golden and crispy. Meanwhile, prepare steamed rice and stir-fried vegetables as desired. Once the tofu is done, remove it from the oven and let it cool slightly. Serve the maple glazed tofu hot with the steamed rice and vegetables, drizzling any remaining marinade over the top as a sauce.",
                 person1.getId(),
-                imageData1,
+                imageData7,
                 "40 minutes",
                 "Intermediate",
                 "3"
@@ -208,7 +215,7 @@ public class DataPopulate {
                 550,
                 "THeat a tablespoon of sesame oil in a large skillet or wok over high heat. Add the sliced pork tenderloin and stir-fry for 2-3 minutes until browned on all sides. Remove the pork from the skillet and set aside. In the same skillet, add another tablespoon of oil and toss in the sliced bell peppers and onions. Stir-fry for 3-4 minutes until the vegetables are tender yet crisp. Return the cooked pork to the skillet and pour the hoisin sauce mixture over the top. Cook for an additional 1-2 minutes, tossing everything together until well combined and heated through. Serve hot over steamed rice and garnish with sliced green onions and sesame seeds.",
                 person1.getId(),
-                imageData1,
+                imageData8,
                 "35 minutes",
                 "Intermediate",
                 "3"
@@ -226,7 +233,7 @@ public class DataPopulate {
                 700,
                 "In a large bowl, whisk together the yogurt, lemon juice, minced garlic, ground cumin, ground coriander, paprika, cayenne pepper, salt, and pepper to create the marinade. Add the cubed lamb shoulder to the bowl and toss to coat in the marinade. Cover and refrigerate for at least 2 hours, or preferably overnight, to marinate. Preheat your grill to medium-high heat. Thread the marinated lamb cubes onto skewers, then grill for 8-10 minutes, turning occasionally, until cooked to your desired doneness. Remove from the grill and let the skewers rest for a few minutes before serving. Serve the yogurt-marinated lamb skewers hot with couscous and roasted vegetables.",
                 person1.getId(),
-                imageData1,
+                imageData9,
                 "50 minutes",
                 "Advanced",
                 "4"
@@ -244,7 +251,7 @@ public class DataPopulate {
                 400,
                 "Preheat your oven to 400°F (200°C). In a shallow dish, combine the panko breadcrumbs, grated Parmesan cheese, lemon zest, chopped fresh parsley, salt, and pepper. Pat the cod fillets dry with paper towels, then dredge them in the flour, shaking off any excess. Dip each fillet into the beaten eggs, then coat evenly with the breadcrumb mixture, pressing gently to adhere. Place the coated cod fillets on a baking sheet lined with parchment paper. Bake in the preheated oven for 15-20 minutes, or until the fish is cooked through and the coating is golden and crispy. Serve the crispy baked cod hot with roasted potatoes and green beans on the side.",
                 person1.getId(),
-                imageData1,
+                imageData10,
                 "30 minutes",
                 "Intermediate",
                 "3"
@@ -451,7 +458,7 @@ public class DataPopulate {
         mealService.saveMeal(meal);
     }
 
-    private byte @Nullable [] readImageDataFromFile(String imagePath) {
+    private byte @Nullable [] readImageDataFromFile(@NotNull String imagePath) {
         try {
             Path path = Paths.get(imagePath);
             return Files.readAllBytes(path);

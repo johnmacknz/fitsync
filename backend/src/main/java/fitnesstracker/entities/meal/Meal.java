@@ -10,7 +10,8 @@ import java.util.Set;
 @Schema(description = "Meal Information")
 public class Meal {
 
-    public Meal(LocalDate mealDate, String mealName, String mealType, Integer calories, String cookingInstructions, Long personId, byte[] mealImage) {
+
+    public Meal(LocalDate mealDate, String mealName, String mealType, Integer calories, String cookingInstructions, Long personId, byte[] mealImage, String cookingTime, String difficulty, String serves) {
         this.mealDate = mealDate != null ? mealDate : LocalDate.now();
         this.mealName = mealName;
         this.mealType = mealType;
@@ -18,6 +19,9 @@ public class Meal {
         this.cookingInstructions = cookingInstructions;
         this.personId = personId;
         this.mealImage = mealImage;
+        this.cookingTime = cookingTime;
+        this.difficulty = difficulty;
+        this.serves = serves;
     }
 
     public Meal() {
@@ -68,6 +72,7 @@ public class Meal {
     }
 
     @Schema(description = "Cooking instructions for the Meal", example = "Bake 100g of beans, put toast in toaster")
+    @Column(length = 1000)
     String cookingInstructions;
     public String getCookingInstructions() {
         return cookingInstructions;
@@ -115,5 +120,30 @@ public class Meal {
         this.mealImage = imageData;
     }
 
+    String cookingTime;
+    public String getCookingTime() {
+        return cookingTime;
+    }
+    public void setCookingTime(String cookingTime) {
+        this.cookingTime = cookingTime;
+    }
+
+    String difficulty;
+    public String getDifficulty() {
+        return difficulty;
+    }
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
+    String serves;
+
+    public String getServes() {
+        return serves;
+    }
+
+    public void setServes(String serves) {
+        this.serves = serves;
+    }
 }
 

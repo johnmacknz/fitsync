@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    margin-left: 20px;
+    margin-left: 90px;
 }
 
 .ft__logic_header {
@@ -24,10 +24,20 @@
     margin-right: 20px;
 }
 
+.ft__logic_subtitle {
+    padding: 28px;
+    background-color: #484F62FF;
+    font-family: var(--font-family);
+    border-radius: 10px;
+    width: 60%;
+    max-width: 400px;
+    margin-right: 20px;
+}
+
 
 .ft__logic_image img {
     width: auto;
-    height: 175px;
+    height: 185px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -42,10 +52,17 @@
     font-family: var(--font-family);
 }
 
-.ingredients,
-.ft__logic_cooking {
+.ingredients {
     width: 100%;
     max-width: 800px;
+    font-family: var(--font-family);
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.ft__logic_cooking {
+    width: 100%;
+    max-width: 605px;
     font-family: var(--font-family);
     border-radius: 10px;
     margin-right: 20px;
@@ -72,3 +89,242 @@
     background-color: #484f62;
 }
 
+.gg-timer,
+.gg-timer::before {
+    border: 2px solid;
+    width: 18px;
+    height: 18px;
+    border-radius: 40px
+}
+.gg-timer {
+    background:
+            linear-gradient(to left,
+            currentColor 10px,transparent 0)
+            no-repeat 6px -2px/2px 6px;
+    box-sizing: border-box;
+    transform: scale(var(--ggs,1));
+    position: relative;
+    display: block;
+    border-top-color: transparent;
+    color: #73ff00;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.gg-timer::after,
+.gg-timer::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute
+}
+.gg-timer::before {
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    right: -2px;
+    top: -2px;
+    transform: rotate(45deg)
+}
+.gg-timer::after {
+    width: 2px;
+    height: 6px;
+    background: currentColor;
+    transform: rotate(-50deg);
+    left: 4px;
+    bottom: 5px;
+    border-radius: 100px
+}
+
+.ft__logic_cookingTime {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.gg-thermostat {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    transform: scale(var(--ggs,1));
+    width: 10px;
+    height: 24px;
+    color: #ff0000;
+    margin-right: 18px;
+    vertical-align: middle;
+}
+.gg-thermostat::after,
+.gg-thermostat::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    border: 2px solid
+}
+.gg-thermostat::after {
+    width: 12px;
+    height: 12px;
+    border-top-color: transparent;
+    bottom: 0;
+    border-radius: 100px;
+    background:
+            radial-gradient(
+                    circle,
+                    currentColor 20%,
+                    transparent 20%
+            ) no-repeat center
+}
+.gg-thermostat::before {
+    width: 8px;
+    height: 16px;
+    border-bottom-color: transparent;
+    left: 2px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px
+}
+
+.ft__logic_difficulty {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.gg-bolt {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 6px;
+    height: 21px;
+    margin-right: 20px;
+    color: #fd7600;
+}
+.gg-bolt::after,
+.gg-bolt::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    transform: rotate(30deg)
+}
+.gg-bolt::before {
+    border-bottom: 12px solid;
+    left: 0;
+    top: 0
+}
+.gg-bolt::after {
+    border-top: 12px solid;
+    right: 0;
+    bottom: 0
+}
+
+.gg-shopping-cart {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    transform: scale(var(--ggs,1));
+    width: 20px;
+    height: 21px;
+    margin-left: 10px;
+    background:
+            linear-gradient(
+                    to left,currentColor 12px,
+                    transparent 0)
+            no-repeat -1px 6px/18px 2px,
+            linear-gradient(
+                    to left,currentColor 12px,
+                    transparent 0)
+            no-repeat 6px 14px/11px 2px,
+            linear-gradient(
+                    to left,currentColor 12px,
+                    transparent 0)
+            no-repeat 0 2px/4px 2px,
+            radial-gradient(
+                    circle,currentColor 60%,
+                    transparent 40%)
+            no-repeat 12px 17px/4px 4px,
+            radial-gradient(
+                    circle,currentColor 60%,
+                    transparent 40%)
+            no-repeat 6px 17px/4px 4px
+}
+.gg-shopping-cart::after,
+.gg-shopping-cart::before {
+    content: "";
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    width: 2px;
+    height: 14px;
+    background: currentColor;
+    top: 2px;
+    left: 4px;
+    transform: skew(12deg)
+}
+.gg-shopping-cart::after {
+    height: 10px;
+    top: 6px;
+    left: 16px;
+    transform: skew(-12deg)
+}
+
+.ft__logic_ingredients_header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.serves {
+    margin-left: 10px;
+}
+
+
+
+.ft__logic_ingredients li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.gg-pentagon-right {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 10px;
+    height: 8px;
+    margin-right: 10px;
+}
+.gg-pentagon-right:before {
+    height: 51%
+}
+.gg-pentagon-right:after,
+.gg-pentagon-right:before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    width: 100%
+}
+.gg-pentagon-right:before {
+    top: -2px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-left: 2px solid;
+    transform: skewX(30deg)
+}
+.gg-pentagon-right:after {
+    bottom: -2px;
+    height: 50%;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    transform: skewX(-30deg)
+}

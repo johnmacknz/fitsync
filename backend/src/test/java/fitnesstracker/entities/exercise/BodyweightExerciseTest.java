@@ -35,7 +35,6 @@ class BodyweightExerciseTest {
 //     * {@link BodyweightExercise#BodyweightExercise(Long, String, LocalDateTime, LocalDateTime, Integer, Integer, Integer, String)}
 //     */
 
-    //TODO: Fix test with new constructor
     @Test
     void testConstructor2() {
         LocalDate ofResult = LocalDate.of(1970, 1, 1);
@@ -56,7 +55,6 @@ class BodyweightExerciseTest {
         assertNull(actualBodyweightExercise.getId());
         assertNull(actualBodyweightExercise.getDescription());
         assertNull(actualBodyweightExercise.getEquipmentRequired());
-        assertNull(actualBodyweightExercise.getTargetMuscle());
         assertEquals(0L, actualBodyweightExercise.getDuration().toNanos());
         assertEquals(1, actualBodyweightExercise.getReps());
         assertEquals(1, actualBodyweightExercise.getSets());

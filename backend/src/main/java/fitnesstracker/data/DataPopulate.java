@@ -373,7 +373,7 @@ public class DataPopulate {
         exercise25Person1.setDescription("Keep your back straight and lift with your legs");
         exerciseHistoryService.addExercise(exercise25Person1);
 
-        Exercise exercise26Person1 = new WeightLiftingExercise(person1.getId(), "Squat", LocalDateTime.of(2024, 3, 22, 11, 0), LocalDateTime.of(2024, 3, 22, 12, 0), 180, 4, 10, 60, "Legs");
+        Exercise exercise26Person1 = new WeightLiftingExercise(person1.getId(), "Squats", LocalDateTime.of(2024, 3, 22, 11, 0), LocalDateTime.of(2024, 3, 22, 12, 0), 180, 4, 10, 60, "Legs");
         exercise26Person1.setEquipmentRequired("Barbell and squat rack");
         exercise26Person1.setDescription("Maintain a controlled descent and powerful ascent");
         exerciseHistoryService.addExercise(exercise26Person1);

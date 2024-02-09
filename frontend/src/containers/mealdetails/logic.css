@@ -29,8 +29,8 @@
     background-color: #484F62FF;
     font-family: var(--font-family);
     border-radius: 10px;
-    width: 60%;
-    max-width: 400px;
+    width: 80%;
+    max-width: 700px;
     margin-right: 20px;
 }
 
@@ -48,7 +48,7 @@
     flex-direction: row;
     align-items: flex-start;
     width: 100%;
-    color: #000000; /* Adjust this to match the text color in the image */
+    color: #000000;
     font-family: var(--font-family);
 }
 
@@ -62,7 +62,7 @@
 
 .ft__logic_cooking {
     width: 100%;
-    max-width: 605px;
+    max-width: 910px;
     font-family: var(--font-family);
     border-radius: 10px;
     margin-right: 20px;

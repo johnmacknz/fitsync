@@ -499,7 +499,7 @@ public class DataPopulate {
                 int randomSleep = getRandomIntInRange(60, 80);
                 int randomWeight = getRandomIntInRange(50, 100);
                 int randomBloodPressure = getRandomIntInRange(60, 90);
-                int randomHydration = getRandomIntInRange(70, 100);
+                int randomHydration = getRandomIntInRange(2, 10);
                 int randomCalorieIn = getRandomIntInRange(1500, 3000);
                 int randomCalorieOut = getRandomIntInRange(1000, 2500);
                 int randomHeartRate = getRandomIntInRange(60, 100);

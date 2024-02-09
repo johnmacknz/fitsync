@@ -58,7 +58,7 @@ const Dashboard = () => {
                             <Label value="Date" position="insideBottom" offset={-5} />
                         </XAxis>
                         <YAxis>
-                            <Label value="Heart Rate(pulse)" angle={-90} position="insideLeft" />
+                            <Label value="Heart Rate(bpm)" angle={-90} position="insideBottomLeft" />
                         </YAxis>
                         <Tooltip />
                         <Legend layout="vertical" verticalAlign="top" align="right"/>
@@ -75,10 +75,10 @@ const Dashboard = () => {
                                margin={{top: 20, right: 30, left: 20, bottom: 10}}>
                         <Rectangle width="100%" height="100%" fill="#acf73e" stroke="#ccc" strokeWidth={1}/>
                         <XAxis dataKey="weightInKg">
-                            <Label value="Weight in KG" position="insideBottom" offset={-5}/>
+                            <Label value="Weight(KG)" position="insideBottom" offset={-5}/>
                         </XAxis>
                         <YAxis>
-                            <Label value="Calories Burned" angle={-90} position="insideLeft"/>
+                            <Label value="Calories Burned(kcal)" angle={-90} position="insideBottomLeft"/>
                         </YAxis>
                         <Tooltip/>
                         <Legend layout="vertical" verticalAlign="top" align="right"/>
@@ -89,7 +89,7 @@ const Dashboard = () => {
                     )}
                 </div>
                 <div className="chart">
-                    <h2 className="form-header">Distance (Km)</h2>
+                    <h2 className="form-header">Distance (Km) iteration Graph</h2>
                     {excerciseChartData.length > 0 ? (
                     <BarChart width={600} height={300} data={excerciseChartData}
                               margin={{top: 20, right: 30, left: 20, bottom: 5}}>
@@ -98,7 +98,7 @@ const Dashboard = () => {
                             <Label value="Records" position="insideBottom" offset={-5}/>
                         </XAxis>
                         <YAxis>
-                            <Label value="Distance in Km" angle={-90} position="insideLeft"/>
+                            <Label value="Distance(KM)" angle={-90} position="insideBottomLeft"/>
                         </YAxis>
                         <Tooltip/>
                         <Legend layout="vertical" verticalAlign="top" align="right"/>
@@ -118,7 +118,7 @@ const Dashboard = () => {
                             <Label value="Date" position="insideBottom" offset={-5}/>
                         </XAxis>
                         <YAxis>
-                            <Label value="Hydration" angle={-90} position="insideLeft"/>
+                            <Label value="Hydration(Litres)" angle={-90} position="insideBottomLeft"/>
                         </YAxis>
                         <Tooltip/>
                         <Legend layout="vertical" verticalAlign="top" align="right"/>
@@ -138,7 +138,7 @@ const Dashboard = () => {
                             <Label value="Date" position="insideBottom" offset={-5}/>
                         </XAxis>
                         <YAxis>
-                            <Label value="Stress" angle={-90} position="insideLeft"/>
+                            <Label value="Stress Score" angle={-90} position="insideBottomLeft"/>
                         </YAxis>
                         <Tooltip/>
                         <Legend layout="vertical" verticalAlign="top" align="right"/>
@@ -158,7 +158,7 @@ const Dashboard = () => {
                             <Label value="Date" position="insideBottom" offset={-5}/>
                         </XAxis>
                         <YAxis>
-                            <Label value="Blood Pressure" angle={-90} position="insideLeft"/>
+                            <Label value="Blood Pressure(mmHg)" angle={-90} position="insideBottomLeft"/>
                         </YAxis>
                         <Tooltip/>
                         <Legend layout="vertical" verticalAlign="top" align="right"/>

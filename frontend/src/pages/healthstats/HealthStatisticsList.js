@@ -72,7 +72,7 @@ const HealthStatisticList = () => {
                 {/*    />*/}
                 {/*</label >*/}
                 <label className="form-label">
-                    Sleep:
+                    Sleep Score:
                     <input className="value-input"
                            type="number"
                            value={newData.sleep}
@@ -80,7 +80,7 @@ const HealthStatisticList = () => {
                     />
                 </label>
                 <label className="form-label">
-                    Weight:
+                    Weight(KG):
                     <input className="value-input"
                            type="number"
                            value={newData.weight}
@@ -88,7 +88,7 @@ const HealthStatisticList = () => {
                     />
                 </label>
                 <label className="form-label">
-                    Blood Pressure:
+                    Blood Pressure(mmHg):
                     <input className="value-input"
                            type="number"
                            value={newData.bloodPressure}
@@ -96,7 +96,7 @@ const HealthStatisticList = () => {
                     />
                 </label>
                 <label className="form-label">
-                    Hydration:
+                    Hydration(Litres):
                     <input className="value-input"
                            type="number"
                            value={newData.hydration}
@@ -104,7 +104,7 @@ const HealthStatisticList = () => {
                     />
                 </label>
                 <label className="form-label">
-                    Calorie In:
+                    Calorie In(kcal):
                     <input className="value-input"
                            type="number"
                            value={newData.calorieIn}
@@ -112,7 +112,7 @@ const HealthStatisticList = () => {
                     />
                 </label>
                 <label className="form-label">
-                    Calorie Out:
+                    Calorie Out(kcal):
                     <input className="value-input"
                            type="number"
                            value={newData.calorieOut}
@@ -120,7 +120,7 @@ const HealthStatisticList = () => {
                     />
                 </label>
                 <label className="form-label">
-                    Heart Rate:
+                    Heart Rate(bpm):
                     <input className="value-input"
                            type="number"
                            value={newData.heartRate}
@@ -128,7 +128,7 @@ const HealthStatisticList = () => {
                     />
                 </label>
                 <label className="form-label">
-                    Stress:
+                    Stress Score:
                     <input className="value-input"
                            type="number"
                            value={newData.stress}
@@ -144,14 +144,14 @@ const HealthStatisticList = () => {
                 <tr>
                     {/*<th>ID</th>*/}
                     <th>Health Date</th>
-                    <th>Sleep</th>
-                    <th>Weight</th>
-                    <th>Blood Pressure</th>
-                    <th>Hydration</th>
-                    <th>Calorie In</th>
-                    <th>Calorie Out</th>
-                    <th>Heart Rate</th>
-                    <th>Stress</th>
+                    <th>Sleep Score</th>
+                    <th>Weight(KG)</th>
+                    <th>Blood Pressure(mmHg)</th>
+                    <th>Hydration(Litres)</th>
+                    <th>Calorie In(kcals)</th>
+                    <th>Calorie Out(kcals)</th>
+                    <th>Heart Rate(bpm)</th>
+                    <th>Stress Score</th>
                     {/*<th>Person ID</th>*/}
                 </tr>
                 </thead>
